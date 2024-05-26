@@ -1,0 +1,46 @@
+.elements {
+  margin: 0 auto;
+  max-width: 882px;
+  max-height: 743px;
+  border: 1px dashed cyan;
+}
+
+.elements__picture {
+  max-width: 282px;
+  max-height: 361px;
+  background-color: #fff;
+}
+
+.elements__picture1 {
+  max-width: 282px;
+  max-height: 282px;
+  border-radius: 10px;
+}
+
+.elements__picture-nameSection {
+  margin: 0 auto;
+  max-width: 282px;
+  max-height: 79px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.elements__picture-name {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000;
+}
+
+.elements__picture-likeBtn {
+  display: flex;
+  margin-left: 15px;
+}
+
+.elements__picture-vectorHeart {
+  width: 21px;
+  height: 19px;
+  border: none;
+  background-color: #fff;
+  align-self: center;
+}
