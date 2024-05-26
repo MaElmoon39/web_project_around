@@ -2,16 +2,23 @@
   margin: 0 auto;
   max-width: 882px;
   max-height: 743px;
-  border: 1px dashed cyan;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .elements__picture {
+  padding: 0 18px 20px 0;
   max-width: 282px;
   max-height: 361px;
   background-color: #fff;
 }
 
-.elements__picture1 {
+.elements__picture:last-of-type {
+  padding-bottom: 0px;
+}
+
+.elements__picture-size {
   max-width: 282px;
   max-height: 282px;
   border-radius: 10px;
