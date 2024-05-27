@@ -11,6 +11,7 @@
   margin-bottom: 21px;
   max-width: 282px;
   max-height: 361px;
+  position: relative;
 }
 
 .elements__picture:nth-last-child() {
@@ -21,6 +22,16 @@
   width: 282px;
   max-height: 282px;
   border-radius: 10px 10px 0 0;
+}
+
+.elements__picture-trashBtn {
+  width: 18px;
+  height: 19px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 18px;
+  right: 15px;
 }
 
 .elements__picture-nameSection {
