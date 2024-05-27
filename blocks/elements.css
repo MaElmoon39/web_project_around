@@ -19,18 +19,19 @@
 
 .elements__picture-size {
   width: 282px;
-  height: 282px;
+  max-height: 282px;
   border-radius: 10px 10px 0 0;
 }
 
 .elements__picture-nameSection {
   background-color: #fff;
-  margin: 0 auto;
+  padding: 0 15px 0 21px;
   max-width: 282px;
   height: 79px;
   border-radius: 0 0 10px 10px;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: space-between;
 }
 
 .elements__picture-name {
@@ -38,11 +39,20 @@
   font-size: 24px;
   line-height: 29px;
   color: #000;
+  text-overflow: ellipsis; /*Estas últimas líneas se usan para evitar desbordamiento de texto*/
+  white-space: nowrap; /*aplicar una elipsis "..."*/
+  overflow: hidden;
 }
 
 .elements__picture-likeBtn {
+  padding: 0;
   display: flex;
-  margin-left: 15px;
+  margin: 0 0 0 8px;
+  background-color: white;
+  border: none;
+  width: 21px;
+  height: 19px;
+  align-self: center;
 }
 
 .elements__picture-vectorHeart {
