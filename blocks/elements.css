@@ -34,6 +34,12 @@
   right: 15px;
 }
 
+.elements__picture-trashBtn:hover {
+  cursor: pointer;
+  opacity: 60%;
+  color: #fff;
+}
+
 .elements__picture-nameSection {
   background-color: #fff;
   padding: 0 15px 0 21px;
@@ -59,7 +65,7 @@
   padding: 0;
   display: flex;
   margin: 0 0 0 8px;
-  background-color: white;
+  background-color: #fff;
   border: none;
   width: 21px;
   height: 19px;
@@ -72,4 +78,14 @@
   border: none;
   background-color: #fff;
   align-self: center;
+}
+
+.elements__picture-vectorHeart:hover {
+  cursor: pointer;
+  opacity: 50%;
+  color: #000;
+}
+
+.elements__picture-vectorHeart:active {
+  color: #000;
 }

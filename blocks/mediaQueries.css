@@ -97,33 +97,33 @@
     max-height: 322px;
     position: fixed;
     top: 143px;
-    left: 20px;
+    left: 22px;
   }
 
-  .popupWindows__editProfile-title {
+  .popupWindows__editProfilePlace-title {
     font-size: 18px;
     line-height: 22px;
   }
 
-  .popupWindows__editProfile-closeBtn {
+  .popupWindows__editProfilePlace-closeBtn {
     font-size: 26px;
     position: fixed;
     top: 90px;
     right: 40px;
   }
 
-  .popupWindows__editProfile-field {
+  .popupWindows__editProfilePlace-field {
     font-size: 14px;
     line-height: 16px;
     margin-left: 22px;
     width: 238px;
   }
 
-  .popupWindows__editProfile-field:last-of-type {
+  .popupWindows__editProfilePlace-field:last-of-type {
     margin: 0px 22px 48px;
   }
 
-  .popupWindows__editProfile-subBtn {
+  .popupWindows__editProfilePlace-subBtn {
     margin: 0 22px 25px;
     width: 238px;
     height: 46px;

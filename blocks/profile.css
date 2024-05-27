@@ -46,9 +46,21 @@
   border: 2px solid #fff;
 }
 
+.profile__info-editName:hover {
+  cursor: pointer;
+  opacity: 60%;
+  color: #000;
+}
+
 .profile__info-editNamePencil {
   width: 10px;
   height: 10px;
+}
+
+.profile__info-editNamePencil:hover {
+  cursor: pointer;
+  opacity: 60%;
+  color: #000;
 }
 
 .profile__addProfile {
@@ -59,8 +71,20 @@
   border: 2px solid #fff;
 }
 
+.profile__addProfile:hover {
+  cursor: pointer;
+  opacity: 60%;
+  color: #000;
+}
+
 .profile__addProfile-sign {
   color: #fff;
   font-size: 22px;
   margin: auto;
+}
+
+.profile__addProfile-sign:hover {
+  cursor: pointer;
+  opacity: 60%;
+  color: #000;
 }

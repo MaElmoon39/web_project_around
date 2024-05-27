@@ -15,7 +15,7 @@
   left: 425px;
 }
 
-.popupWindows__editProfile-title {
+.popupWindows__editProfilePlace-title {
   margin: 0;
   color: #000;
   font-size: 24px;
@@ -24,7 +24,7 @@
   padding: 36px 0 0 34px;
 }
 
-.popupWindows__editProfile-closeBtn {
+.popupWindows__editProfilePlace-closeBtn {
   font-size: 41px;
   color: #fff;
   position: fixed;
@@ -32,7 +32,13 @@
   right: 392px;
 }
 
-.popupWindows__editProfile-field {
+.popupWindows__editProfilePlace-closeBtn:hover {
+  cursor: pointer;
+  opacity: 60%;
+  color: #000;
+}
+
+.popupWindows__editProfilePlace-field {
   border: 0;
   margin: 54px 36px 30px;
   width: 358px;
@@ -40,11 +46,11 @@
   opacity: 20%;
 }
 
-.popupWindows__editProfile-field:last-of-type {
+.popupWindows__editProfilePlace-field:last-of-type {
   margin: 0px 36px 48px;
 }
 
-.popupWindows__editProfile-subBtn {
+.popupWindows__editProfilePlace-subBtn {
   margin: 0 36px 36px;
   width: 358px;
   height: 50px;
@@ -52,4 +58,9 @@
   font-size: 18px;
   line-height: 22px;
   color: #fff;
+}
+
+.popupWindows__editProfilePlace-subBtn:hover {
+  cursor: pointer;
+  opacity: 80%;
 }
