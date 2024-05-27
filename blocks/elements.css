@@ -8,28 +8,29 @@
 }
 
 .elements__picture {
-  padding: 0 18px 20px 0;
+  margin-bottom: 21px;
   max-width: 282px;
   max-height: 361px;
-  background-color: #fff;
 }
 
-.elements__picture:last-of-type {
-  padding-bottom: 0px;
+.elements__picture:nth-last-child() {
+  margin-bottom: 0px;
 }
 
 .elements__picture-size {
-  max-width: 282px;
-  max-height: 282px;
-  border-radius: 10px;
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0 0;
 }
 
 .elements__picture-nameSection {
+  background-color: #fff;
   margin: 0 auto;
   max-width: 282px;
-  max-height: 79px;
+  height: 79px;
+  border-radius: 0 0 10px 10px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .elements__picture-name {
