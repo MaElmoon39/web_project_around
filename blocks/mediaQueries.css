@@ -1,0 +1,94 @@
+@media screen and (max-width: 928px) and (min-width: 768px) {
+  .header,
+  .profile,
+  .elements {
+    max-width: 581px;
+    max-height: 100%;
+  }
+
+  .profile__info {
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+  .elements__picture-nameSection {
+    height: 50px;
+  }
+
+  .elements__picture-name {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    max-width: 100%;
+    padding-left: 27px;
+  }
+
+  .profile {
+    max-width: 282px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .profile__photo {
+    width: 120px;
+    height: 120px;
+    align-self: center;
+    margin-bottom: 14px;
+  }
+
+  .profile__info {
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+  }
+
+  .profile__info-text {
+    padding-right: 12px;
+  }
+
+  .profile__info-name {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 400;
+    padding-bottom: 14px;
+    padding-right: 0px;
+  }
+
+  .profile__info-aboutMe {
+    font-size: 14px;
+    line-height: 18px;
+    padding-right: 0px;
+  }
+
+  .profile__info-editName {
+    align-self: normal;
+  }
+
+  .profile__addProfile {
+    margin-top: 36px;
+    width: 282px;
+    height: 50px;
+  }
+
+  .elements {
+    max-width: 282px;
+    max-height: 100%;
+  }
+
+  .elements__picture {
+    margin: 0 auto 21px;
+  }
+
+  .elements__picture-nameSection {
+    height: 50px;
+  }
+
+  .elements__picture-name {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}

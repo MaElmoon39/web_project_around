@@ -4,9 +4,10 @@
 @import url("../blocks/header.css");
 @import url("../blocks/profile.css");
 @import url("../blocks/elements.css");
+@import url("../blocks/mediaQueries.css");
 @import url("../blocks/footer.css");
+
 /*
 @import url("../blocks/gallery_grid.css");
 @import url("../blocks/places.css");
-@import url("../blocks/cover.css");
-@import url("../blocks/mediaQueries.css"); */
+@import url("../blocks/cover.css");*/
