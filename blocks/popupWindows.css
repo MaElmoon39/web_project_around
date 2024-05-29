@@ -6,13 +6,15 @@
   margin: 0 auto;
   max-width: 430px;
   max-height: 330px;
-  /* width: 430px;
-  height: 330px; */
   background-color: #fff;
   border-radius: 10px;
   position: fixed;
-  top: 195px;
-  left: 425px;
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /*Esto ayuda a posicionar en el centro de la pantalla, independmt del tamaño*/
 }
 
 .popupWindows__editProfilePlace-title {
@@ -26,10 +28,11 @@
 
 .popupWindows__editProfilePlace-closeBtn {
   font-size: 41px;
-  color: #fff;
+  color: #d32121;
   position: fixed;
-  top: 156px;
-  right: 392px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .popupWindows__editProfilePlace-closeBtn:hover {
@@ -38,7 +41,7 @@
   color: #000;
 }
 
-.popupWindows__editProfilePlace-field {
+.form__editProfilePlace-field {
   border: 0;
   margin: 54px 36px 30px;
   width: 358px;
@@ -46,11 +49,11 @@
   opacity: 20%;
 }
 
-.popupWindows__editProfilePlace-field:last-of-type {
+.form__editProfilePlace-field:last-of-type {
   margin: 0px 36px 48px;
 }
 
-.popupWindows__editProfilePlace-subBtn {
+.form__editProfilePlace-subBtn {
   margin: 0 36px 36px;
   width: 358px;
   height: 50px;
@@ -60,7 +63,7 @@
   color: #fff;
 }
 
-.popupWindows__editProfilePlace-subBtn:hover {
+.form__editProfilePlace-subBtn:hover {
   cursor: pointer;
   opacity: 80%;
 }
