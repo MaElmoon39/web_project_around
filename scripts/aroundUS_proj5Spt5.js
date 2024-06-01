@@ -1,6 +1,5 @@
 let content = document.querySelector(".content");
 let editProfileBtn = content.querySelector(".profile__info-edit");
-
 let addImgBtn = content.querySelector(".profile__add-sign");
 
 //Sección de declaración de funciones
