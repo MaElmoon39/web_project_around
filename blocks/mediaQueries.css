@@ -34,8 +34,6 @@
   }
 
   .profile__photo {
-    width: 120px;
-    height: 120px;
     align-self: center;
     margin-bottom: 14px;
   }
@@ -97,29 +95,32 @@
     max-height: 322px;
   }
 
+  .popupWindows__editProfilePlace {
+    padding: 25px 16px 0px 22px;
+  }
+
   .popupWindows__editProfilePlace-title {
     font-size: 18px;
     line-height: 22px;
+    padding-bottom: 74px;
   }
 
   .popupWindows__editProfilePlace-closeBtn {
-    font-size: 26px;
+    position: fixed;
+    top: -12%;
+    right: 3%;
   }
 
-  .form__editProfilePlace-field {
-    font-size: 14px;
-    line-height: 16px;
-    margin-left: 22px;
-    width: 238px;
+  .popupWindows__editProfilePlace-closeBtnImg {
+    width: 26px;
   }
 
-  .form__editProfilePlace-field:last-of-type {
-    margin: 0px 22px 48px;
+  .popupWindows__formContainer {
+    max-width: 238px;
   }
 
   .form__editProfilePlace-subBtn {
-    margin: 0 22px 25px;
-    width: 238px;
+    margin: 46px auto 25px;
     height: 46px;
   }
 }
