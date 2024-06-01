@@ -5,17 +5,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  row-gap: 21px;
 }
 
 .elements__picture {
-  margin-bottom: 21px;
   max-width: 282px;
   max-height: 361px;
   position: relative;
 }
 
 .elements__picture:nth-last-child() {
-  margin-bottom: 0px;
+  row-gap: 0px;
 }
 
 .elements__picture-size {
@@ -24,7 +24,7 @@
   border-radius: 10px 10px 0 0;
 }
 
-.elements__picture-trashBtn {
+.elements__picture-trash-btn {
   width: 18px;
   height: 19px;
   background-color: transparent;
@@ -34,13 +34,13 @@
   right: 15px;
 }
 
-.elements__picture-trashBtn:hover {
+.elements__picture-trash-btn:hover {
   cursor: pointer;
   opacity: 60%;
   color: #fff;
 }
 
-.elements__picture-nameSection {
+.elements__picture-name-section {
   background-color: #fff;
   padding: 0 15px 0 21px;
   max-width: 282px;
@@ -61,31 +61,27 @@
   overflow: hidden;
 }
 
-.elements__picture-likeBtn {
-  padding: 0;
-  display: flex;
-  margin: 0 0 0 8px;
-  background-color: #fff;
-  border: none;
-  width: 21px;
-  height: 19px;
-  align-self: center;
-}
-
-.elements__picture-vectorHeart {
+.elements__picture-like-btn {
   width: 21px;
   height: 19px;
   border: none;
   background-color: #fff;
   align-self: center;
-}
-
-.elements__picture-vectorHeart:hover {
+  background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart.svg)
+    center no-repeat;
+  background-size: 100%;
   cursor: pointer;
-  opacity: 50%;
+  align-self: center;
+  opacity: 1;
   color: #000;
 }
 
-.elements__picture-vectorHeart:active {
-  color: #000;
+.elements__picture-like-btn:hover {
+  opacity: 0.5;
+}
+
+.elements__picture-like-btn:active {
+  opacity: 1;
+  background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart-filled.svg)
+    center no-repeat;
 }

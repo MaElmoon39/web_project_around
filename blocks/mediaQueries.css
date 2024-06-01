@@ -11,7 +11,7 @@
     padding-right: 50px;
   }
 
-  .elements__picture-nameSection {
+  .elements__picture-name-section {
     height: 50px;
   }
 
@@ -56,17 +56,17 @@
     padding-right: 0px;
   }
 
-  .profile__info-aboutMe {
+  .profile__info-about {
     font-size: 14px;
     line-height: 18px;
     padding-right: 0px;
   }
 
-  .profile__info-editName {
+  .profile__info-edit {
     align-self: normal;
   }
 
-  .profile__addProfile {
+  .profile__add-img {
     margin-top: 36px;
     width: 282px;
     height: 50px;
@@ -81,7 +81,7 @@
     margin: 0 auto 21px;
   }
 
-  .elements__picture-nameSection {
+  .elements__picture-name-section {
     height: 50px;
   }
 

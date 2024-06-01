@@ -19,6 +19,13 @@
     -50%,
     -50%
   ); /*Esto ayuda a posicionar en el centro de la pantalla, independmt del tamaño*/
+  opacity: 0;
+  visibility: hidden;
+}
+
+.popupWindows__show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .popupWindows__editProfilePlace {

@@ -32,14 +32,14 @@
   padding-right: 16px;
 }
 
-.profile__info-aboutMe {
+.profile__info-about {
   margin: 0px;
   font-size: 18px;
   line-height: 22px;
   padding-right: 17px;
 }
 
-.profile__info-editName {
+.profile__info-edit {
   width: 24px;
   height: 24px;
   align-self: center;
@@ -47,24 +47,18 @@
   border: 2px solid #fff;
 }
 
-.profile__info-editName:hover {
+.profile__info-edit:hover {
   cursor: pointer;
   opacity: 60%;
   color: #000;
 }
 
-.profile__info-editNamePencil {
+.profile__info-edit-pencil {
   width: 10px;
   height: 10px;
 }
 
-.profile__info-editNamePencil:hover {
-  cursor: pointer;
-  opacity: 60%;
-  color: #000;
-}
-
-.profile__addProfile {
+.profile__add-img {
   width: 150px;
   height: 50px;
   align-self: center;
@@ -72,20 +66,14 @@
   border: 2px solid #fff;
 }
 
-.profile__addProfile:hover {
+.profile__add-img:hover {
   cursor: pointer;
   opacity: 60%;
   color: #000;
 }
 
-.profile__addProfile-sign {
+.profile__add-sign {
   color: #fff;
   font-size: 22px;
   margin: auto;
-}
-
-.profile__addProfile-sign:hover {
-  cursor: pointer;
-  opacity: 60%;
-  color: #000;
 }
