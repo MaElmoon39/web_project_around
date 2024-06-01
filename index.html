@@ -28,7 +28,236 @@
             alt="Profile photo"
             class="profile__photo"
           />
-          <h2 class="profile__name">Jacques Cousteau</h2>
+          <div class="profile__info">
+            <div class="profile__info-text">
+              <h2 class="profile__info-name">Jacques Cousteau</h2>
+              <p class="profile__info-about">Explorer</p>
+            </div>
+
+            <button class="profile__info-edit">
+              <img
+                class="profile__info-edit-pencil"
+                src="images/pencilEditButton.svg"
+                alt="Pencil Edit Button"
+              />
+            </button>
+          </div>
+
+          <button class="profile__add-img">
+            <p class="profile__add-sign">+</p>
+          </button>
+        </section>
+
+        <section class="elements">
+          <!-- Picture #1 -->
+          <div class="elements__picture">
+            <img
+              class="elements__picture-size"
+              src="images/Chinatown_ManhattanUSA.jpg"
+              alt="Chinatown Manhattan USA"
+            />
+
+            <button class="elements__picture-trash-btn">
+              <img
+                class="elements__picture-vector-trash"
+                src="images/TrashButton.svg"
+                alt="Picture trash button"
+              />
+            </button>
+
+            <div class="elements__picture-name-section">
+              <h3 class="elements__picture-name">Chinatown</h3>
+              <button class="elements__picture-like-btn"></button>
+            </div>
+          </div>
+
+          <!-- Picture #2 -->
+          <div class="elements__picture">
+            <img
+              class="elements__picture-size"
+              src="images/GhostbustersHeadquarters_NY_USA.jpg"
+              alt="Ghostbusters Headquarters USA"
+            />
+
+            <button class="elements__picture-trash-btn">
+              <img
+                class="elements__picture-vector-trash"
+                src="images/TrashButton.svg"
+                alt="Picture trash button"
+              />
+            </button>
+
+            <div class="elements__picture-name-section">
+              <h3 class="elements__picture-name">Ghostbusters Headquarters</h3>
+              <button class="elements__picture-like-btn"></button>
+            </div>
+          </div>
+
+          <!-- Picture #3 -->
+          <div class="elements__picture">
+            <img
+              class="elements__picture-size"
+              src="images/Guatape_AntioquiaCOL.jpg"
+              alt="Guatape Antioquia Colombia"
+            />
+
+            <button class="elements__picture-trash-btn">
+              <img
+                class="elements__picture-vector-trash"
+                src="images/TrashButton.svg"
+                alt="Picture trash button"
+              />
+            </button>
+
+            <div class="elements__picture-name-section">
+              <h3 class="elements__picture-name">Guatapé</h3>
+              <button class="elements__picture-like-btn"></button>
+            </div>
+          </div>
+
+          <!-- Picture #4 -->
+          <div class="elements__picture">
+            <img
+              class="elements__picture-size"
+              src="images/HongKong_Streetnight.jpg"
+              alt="Streetnight HongKong"
+            />
+
+            <button class="elements__picture-trash-btn">
+              <img
+                class="elements__picture-vector-trash"
+                src="images/TrashButton.svg"
+                alt="Picture trash button"
+              />
+            </button>
+
+            <div class="elements__picture-name-section">
+              <h3 class="elements__picture-name">Hong Kong St</h3>
+              <button class="elements__picture-like-btn"></button>
+            </div>
+          </div>
+
+          <!-- Picture #5 -->
+          <div class="elements__picture">
+            <img
+              class="elements__picture-size"
+              src="images/MochilaWayu_CartagenaCOL.jpg"
+              alt="MochilaWayu Cartagena Colombia"
+            />
+
+            <button class="elements__picture-trash-btn">
+              <img
+                class="elements__picture-vector-trash"
+                src="images/TrashButton.svg"
+                alt="Picture trash button"
+              />
+            </button>
+
+            <div class="elements__picture-name-section">
+              <h3 class="elements__picture-name">Mochila Wayú</h3>
+              <button class="elements__picture-like-btn"></button>
+            </div>
+          </div>
+
+          <!-- Picture #6 -->
+          <div class="elements__picture">
+            <img
+              class="elements__picture-size"
+              src="images/suculentas.jpg"
+              alt="Plantas Suculentas Colombia"
+            />
+
+            <button class="elements__picture-trash-btn">
+              <img
+                class="elements__picture-vector-trash"
+                src="images/TrashButton.svg"
+                alt="Picture trash button"
+              />
+            </button>
+
+            <div class="elements__picture-name-section">
+              <h3 class="elements__picture-name">Suculentas</h3>
+              <button class="elements__picture-like-btn"></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="popupWindows">
+          <div
+            class="popupWindows__editProfilePlace popupWindows__editProfilePlace_btn_editProfile"
+          >
+            <h3 class="popupWindows__editProfilePlace-title">Editar perfil</h3>
+            <span class="popupWindows__editProfilePlace-closeBtn">
+              <img
+                src="images/CloseIcon.svg"
+                alt="Close popup icon"
+                class="popupWindows__editProfilePlace-closeBtnImg"
+              />
+            </span>
+
+            <div class="popupWindows__formContainer">
+              <form class="form popupWindows__formContainer" action="">
+                <input
+                  class="form__editProfilePlace-field"
+                  type="text"
+                  id="nameProfile"
+                  name="nameProfile"
+                  placeholder="Nombre"
+                />
+
+                <input
+                  class="form__editProfilePlace-field"
+                  type="text"
+                  id="aboutMe"
+                  name="aboutMe"
+                  placeholder="Acerca de mí"
+                />
+
+                <button class="form__editProfilePlace-subBtn" type="submit">
+                  Crear
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="popupWindows">
+          <div
+            class="popupWindows__editProfilePlace popupWindows__editProfilePlace_btn_addPlace"
+          >
+            <h3 class="popupWindows__editProfilePlace-title">Nuevo lugar</h3>
+            <span class="popupWindows__editProfilePlace-closeBtn">
+              <img
+                src="images/CloseIcon.svg"
+                alt="Close popup icon"
+                class="popupWindows__editProfilePlace-closeBtnImg"
+              />
+            </span>
+
+            <div class="popupWindows__formContainer">
+              <form class="form popupWindows__formContainer" action="">
+                <input
+                  class="form__editProfilePlace-field"
+                  type="text"
+                  id="Title"
+                  name="Title"
+                  placeholder="Título"
+                />
+
+                <input
+                  class="form__editProfilePlace-field"
+                  type="text"
+                  id="imgLink"
+                  name="imgLink"
+                  placeholder="Enlace a la imagen"
+                />
+
+                <button class="form__editProfilePlace-subBtn" type="submit">
+                  Crear
+                </button>
+              </form>
+            </div>
+          </div>
         </section>
       </main>
 
@@ -36,5 +265,7 @@
         <p class="footer__copyright">&copy; 2024. María Tortello</p>
       </footer>
     </div>
+
+    <script src="scripts/aroundUS_proj5Spt5.js"></script>
   </body>
 </html>
