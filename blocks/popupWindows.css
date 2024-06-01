@@ -59,13 +59,17 @@
 }
 
 .form__edit-field {
+  color: rgb(0 0 0 / 1);
   width: 100%;
   margin-bottom: 28px;
   border: 0;
-  border-bottom: 1px solid #000;
-  opacity: 20%;
+  border-bottom: 1px solid rgb(0 0 0 / 0.2);
+  /* opacity: 20%; */
   font-size: 14px;
   line-height: 17px;
+}
+
+.form__edit-field::placeholder {
   color: #c4c4c4;
 }
 
