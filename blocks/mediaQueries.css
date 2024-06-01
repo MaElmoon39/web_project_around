@@ -90,36 +90,36 @@
     line-height: 22px;
   }
 
-  .popupWindows {
+  .popup {
     max-width: 282px;
     max-height: 322px;
   }
 
-  .popupWindows__editProfilePlace {
+  .popup__edit {
     padding: 25px 16px 0px 22px;
   }
 
-  .popupWindows__editProfilePlace-title {
+  .popup__edit-title {
     font-size: 18px;
     line-height: 22px;
     padding-bottom: 74px;
   }
 
-  .popupWindows__editProfilePlace-closeBtn {
+  .popup__edit-close-btn {
     position: fixed;
     top: -12%;
     right: 3%;
   }
 
-  .popupWindows__editProfilePlace-closeBtnImg {
+  .popup__edit-btn-img {
     width: 26px;
   }
 
-  .popupWindows__formContainer {
+  .popup__formContainer {
     max-width: 238px;
   }
 
-  .form__editProfilePlace-subBtn {
+  .form__edit-subm-btn {
     margin: 46px auto 25px;
     height: 46px;
   }

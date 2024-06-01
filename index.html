@@ -182,23 +182,21 @@
           </div>
         </section>
 
-        <section class="popupWindows">
-          <div
-            class="popupWindows__editProfilePlace popupWindows__editProfilePlace_btn_editProfile"
-          >
-            <h3 class="popupWindows__editProfilePlace-title">Editar perfil</h3>
-            <span class="popupWindows__editProfilePlace-closeBtn">
+        <section class="popup popup_profile">
+          <div class="popup__edit">
+            <h3 class="popup__edit-title">Editar perfil</h3>
+            <span class="popup__edit-close-btn">
               <img
                 src="images/CloseIcon.svg"
                 alt="Close popup icon"
-                class="popupWindows__editProfilePlace-closeBtnImg"
+                class="popup__edit-btn-img"
               />
             </span>
 
-            <div class="popupWindows__formContainer">
-              <form class="form popupWindows__formContainer" action="">
+            <div class="popup__formContainer">
+              <form class="form popup__formContainer form_profile" action="">
                 <input
-                  class="form__editProfilePlace-field"
+                  class="form__edit-field form__edit-field_f1_name"
                   type="text"
                   id="nameProfile"
                   name="nameProfile"
@@ -206,55 +204,49 @@
                 />
 
                 <input
-                  class="form__editProfilePlace-field"
+                  class="form__edit-field form__edit-field_f2_about"
                   type="text"
-                  id="aboutMe"
-                  name="aboutMe"
+                  id="about"
+                  name="about"
                   placeholder="Acerca de mí"
                 />
 
-                <button class="form__editProfilePlace-subBtn" type="submit">
-                  Crear
-                </button>
+                <button class="form__edit-subm-btn" type="submit">Crear</button>
               </form>
             </div>
           </div>
         </section>
 
-        <section class="popupWindows">
-          <div
-            class="popupWindows__editProfilePlace popupWindows__editProfilePlace_btn_addPlace"
-          >
-            <h3 class="popupWindows__editProfilePlace-title">Nuevo lugar</h3>
-            <span class="popupWindows__editProfilePlace-closeBtn">
+        <section class="popup popup_add-image">
+          <div class="popup__edit">
+            <h3 class="popup__edit-title">Nuevo lugar</h3>
+            <span class="popup__edit-close-btn">
               <img
                 src="images/CloseIcon.svg"
                 alt="Close popup icon"
-                class="popupWindows__editProfilePlace-closeBtnImg"
+                class="popup__edit-btn-img"
               />
             </span>
 
-            <div class="popupWindows__formContainer">
-              <form class="form popupWindows__formContainer" action="">
+            <div class="popup__formContainer">
+              <form class="form popup__formContainer form_add-card" action="">
                 <input
-                  class="form__editProfilePlace-field"
+                  class="form__edit-field form__edit-field_f3_name"
                   type="text"
-                  id="Title"
-                  name="Title"
+                  id="placeTitle"
+                  name="placeTitle"
                   placeholder="Título"
                 />
 
                 <input
-                  class="form__editProfilePlace-field"
+                  class="form__edit-field form__edit-field_f4_about"
                   type="text"
-                  id="imgLink"
-                  name="imgLink"
+                  id="linkImg"
+                  name="linkImg"
                   placeholder="Enlace a la imagen"
                 />
 
-                <button class="form__editProfilePlace-subBtn" type="submit">
-                  Crear
-                </button>
+                <button class="form__edit-subm-btn" type="submit">Crear</button>
               </form>
             </div>
           </div>
