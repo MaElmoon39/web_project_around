@@ -2,6 +2,18 @@
   position: relative;
 }
 
+.popup-container-bg {
+  background-color: rgba(0, 0, 0, 0.35);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .popup {
   margin: 0 auto;
   max-width: 430px;

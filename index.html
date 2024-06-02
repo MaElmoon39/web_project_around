@@ -181,75 +181,81 @@
           </div>
         </section>
 
-        <section class="popup popup_profile">
-          <div class="popup__edit">
-            <h3 class="popup__edit-title">Editar perfil</h3>
-            <span class="popup__edit-close-btn">
-              <img
-                src="images/CloseIcon.svg"
-                alt="Close popup icon"
-                class="popup__edit-btn-img"
-              />
-            </span>
-
-            <div class="popup__formContainer">
-              <form class="form popup__formContainer form_profile">
-                <input
-                  class="form__edit-field form__edit-field_profile_name"
-                  type="text"
-                  id="nameProfile"
-                  name="nameProfile"
-                  placeholder="Nombre"
+        <div class="popup-container">
+          <section class="popup popup_profile">
+            <div class="popup__edit">
+              <h3 class="popup__edit-title">Editar perfil</h3>
+              <span class="popup__edit-close-btn">
+                <img
+                  src="images/CloseIcon.svg"
+                  alt="Close popup icon"
+                  class="popup__edit-btn-img"
                 />
+              </span>
 
-                <input
-                  class="form__edit-field form__edit-field_about"
-                  type="text"
-                  id="about"
-                  name="about"
-                  placeholder="Acerca de mí"
-                />
+              <div class="popup__formContainer">
+                <form class="form popup__formContainer form_profile">
+                  <input
+                    class="form__edit-field form__edit-field_profile_name"
+                    type="text"
+                    id="nameProfile"
+                    name="nameProfile"
+                    placeholder="Nombre"
+                  />
 
-                <button class="form__edit-subm-btn" type="submit">Crear</button>
-              </form>
+                  <input
+                    class="form__edit-field form__edit-field_about"
+                    type="text"
+                    id="about"
+                    name="about"
+                    placeholder="Acerca de mí"
+                  />
+
+                  <button class="form__edit-subm-btn" type="submit">
+                    Crear
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section class="popup popup_add-image">
-          <div class="popup__edit">
-            <h3 class="popup__edit-title">Nuevo lugar</h3>
-            <span class="popup__edit-close-btn">
-              <img
-                src="images/CloseIcon.svg"
-                alt="Close popup icon"
-                class="popup__edit-btn-img"
-              />
-            </span>
-
-            <div class="popup__formContainer">
-              <form class="form popup__formContainer form_add-card">
-                <input
-                  class="form__edit-field form__edit-field_image_name"
-                  type="text"
-                  id="placeTitle"
-                  name="placeTitle"
-                  placeholder="Título"
+          <section class="popup popup_add-image">
+            <div class="popup__edit">
+              <h3 class="popup__edit-title">Nuevo lugar</h3>
+              <span class="popup__edit-close-btn">
+                <img
+                  src="images/CloseIcon.svg"
+                  alt="Close popup icon"
+                  class="popup__edit-btn-img"
                 />
+              </span>
 
-                <input
-                  class="form__edit-field form__edit-field_image_about"
-                  type="text"
-                  id="linkImg"
-                  name="linkImg"
-                  placeholder="Enlace a la imagen"
-                />
+              <div class="popup__formContainer">
+                <form class="form popup__formContainer form_add-card">
+                  <input
+                    class="form__edit-field form__edit-field_image_name"
+                    type="text"
+                    id="placeTitle"
+                    name="placeTitle"
+                    placeholder="Título"
+                  />
 
-                <button class="form__edit-subm-btn" type="submit">Crear</button>
-              </form>
+                  <input
+                    class="form__edit-field form__edit-field_image_about"
+                    type="text"
+                    id="linkImg"
+                    name="linkImg"
+                    placeholder="Enlace a la imagen"
+                  />
+
+                  <button class="form__edit-subm-btn" type="submit">
+                    Crear
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
 
       <footer class="footer">

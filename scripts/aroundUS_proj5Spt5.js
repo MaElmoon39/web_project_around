@@ -10,6 +10,9 @@ function editProfile() {
   const editNode = document.querySelector(".popup_profile");
   editNode.classList.add("popup_opened");
 
+  const popupContainer = document.querySelector(".popup-container");
+  popupContainer.classList.add("popup-container-bg");
+
   let nameNode = document.querySelector(".profile__info-name");
   let inputName = document.querySelector(".form__edit-field_profile_name");
   let aboutNode = document.querySelector(".profile__info-about");
@@ -23,15 +26,20 @@ function editProfile() {
 function addImage() {
   const addNode = document.querySelector(".popup_add-image");
   addNode.classList.add("popup_opened");
+
+  const popupContainer = document.querySelector(".popup-container");
+  popupContainer.classList.add("popup-container-bg");
 }
 
 //Función para cerrar los popups
 function closeAllPopups() {
   const closeProfileBtn = document.querySelector(".popup_profile");
   const closeImgBtn = document.querySelector(".popup_add-image");
+  const popupContainer = document.querySelector(".popup-container");
 
   closeProfileBtn.classList.remove("popup_opened");
   closeImgBtn.classList.remove("popup_opened");
+  popupContainer.classList.remove("popup-container-bg");
 }
 
 //Función para editar el popup "editar perfil"
