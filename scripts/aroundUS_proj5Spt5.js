@@ -7,7 +7,16 @@ let formElement = document.querySelector(".form_profile");
 //Sección de declaración de funciones
 //Función para mostrar el popup de "editar perfil"
 function editProfile() {
-  document.querySelector(".popup_profile").classList.add("popup_opened");
+  const editNode = document.querySelector(".popup_profile");
+  editNode.classList.add("popup_opened");
+
+  let nameNode = document.querySelector(".profile__info-name");
+  let inputName = document.querySelector(".form__edit-field_profile_name");
+  let aboutNode = document.querySelector(".profile__info-about");
+  let inputAbout = document.querySelector(".form__edit-field_about");
+
+  inputName.value = nameNode.textContent;
+  inputAbout.value = aboutNode.textContent;
 }
 
 //Función para mostrar el popup de "nuevo lugar"
