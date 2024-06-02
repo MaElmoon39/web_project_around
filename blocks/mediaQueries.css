@@ -29,7 +29,8 @@
 
   .profile {
     max-width: 282px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: center;
   }
 
@@ -41,6 +42,7 @@
   .profile__info {
     padding-left: 0px;
     padding-right: 0px;
+    justify-content: center;
     text-align: center;
   }
 

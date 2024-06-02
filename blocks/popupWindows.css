@@ -59,13 +59,22 @@
 }
 
 .form__edit-field {
+  color: rgb(0 0 0 / 1);
   width: 100%;
   margin-bottom: 28px;
   border: 0;
-  border-bottom: 1px solid #000;
-  opacity: 20%;
+  border-bottom: 1px solid rgb(0 0 0 / 0.2);
   font-size: 14px;
   line-height: 17px;
+}
+
+/*Esta declaración permite que al momento de dar click en el box del input
+no aparezca el borde en toda la caja y se mantenga el texto en negro*/
+.form__edit-field:focus {
+  outline-style: none;
+}
+
+.form__edit-field::placeholder {
   color: #c4c4c4;
 }
 
