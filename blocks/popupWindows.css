@@ -64,9 +64,14 @@
   margin-bottom: 28px;
   border: 0;
   border-bottom: 1px solid rgb(0 0 0 / 0.2);
-  /* opacity: 20%; */
   font-size: 14px;
   line-height: 17px;
+}
+
+/*Esta declaración permite que al momento de dar click en el box del input
+no aparezca el borde en toda la caja y se mantenga el texto en negro*/
+.form__edit-field:focus {
+  outline-style: none;
 }
 
 .form__edit-field::placeholder {
