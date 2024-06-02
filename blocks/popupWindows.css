@@ -19,7 +19,7 @@
   visibility: hidden;
 }
 
-.popup__show {
+.popup_opened {
   opacity: 1;
   visibility: visible;
 }
