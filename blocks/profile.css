@@ -64,16 +64,19 @@
   align-self: center;
   background-color: #000;
   border: 2px solid #fff;
+  background: url(../images/AddButton.svg) center no-repeat;
+  background-size: 22px 22px;
+  cursor: pointer;
 }
 
 .profile__add-img:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
   opacity: 60%;
   color: #000;
 }
 
-.profile__add-sign {
+/* .profile__add-sign {
   color: #fff;
   font-size: 22px;
   margin: auto;
-}
+} */
