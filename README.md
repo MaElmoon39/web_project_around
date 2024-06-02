@@ -16,7 +16,7 @@ Así debe quedar el proyecto (imagen de referencia):
 Y así se ve el proyecto finalizado:
 
 ![image](https://github.com/MaElmoon39/web_project_around/assets/90271019/7fa3b69b-328f-4090-a8b1-d8057b973fb0)
-![image](https://github.com/MaElmoon39/web_project_around/assets/90271019/d187c041-20de-44c4-9c5e-a8b954cc44c3)
+![image](https://github.com/MaElmoon39/web_project_around/assets/90271019/a0f12c17-47e6-4e6b-aa31-61279dc89984)
 
 ## Enlace a GitHub Pages:
 Link: https://maelmoon39.github.io/web_project_around
