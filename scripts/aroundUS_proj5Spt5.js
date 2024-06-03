@@ -38,11 +38,17 @@ const initialCards = [
   },
 ];
 
-let editProfileBtn = content.querySelector(".profile__info-edit");
-let addImgBtn = content.querySelector(".profile__add-img");
-let closeBtn = document.querySelectorAll(".popup__edit-close-btn");
-let formElement = document.querySelector(".form_profile");
 let cardsContainer = document.querySelector(".elements");
+let addImgBtn = content.querySelector(".profile__add-img");
+
+let editProfileBtn = content.querySelector(".profile__info-edit");
+let closeBtn = document.querySelectorAll(".popup__edit-close-btn");
+
+let formElement = document.querySelector(".form_profile");
+let popupNewImg = document.querySelector(".popup_add-image");
+let newImgForm = popupNewImg.querySelector(".form_add-card");
+let formImgName = popupNewImg.querySelector(".form__edit-field_image_name");
+let formImgLink = popupNewImg.querySelector(".form__edit-field_image_link");
 
 //Función para agregar las cards al cargar la página
 initialCards.forEach((data) => {
@@ -86,8 +92,7 @@ function editProfile() {
 //Función para mostrar el popup de "nuevo lugar" y
 //añadir nueva imagen al inicio del grupo
 function addImage() {
-  const addNode = document.querySelector(".popup_add-image");
-  addNode.classList.add("popup_opened");
+  popupNewImg.classList.add("popup_opened");
 
   const popupContainer = document.querySelector(".popup-container");
   popupContainer.classList.add("popup-container-bg");
@@ -96,12 +101,34 @@ function addImage() {
 //Función para cerrar los popups
 function closeAllPopups() {
   const closeProfileBtn = document.querySelector(".popup_profile");
-  const closeImgBtn = document.querySelector(".popup_add-image");
   const popupContainer = document.querySelector(".popup-container");
 
   closeProfileBtn.classList.remove("popup_opened");
-  closeImgBtn.classList.remove("popup_opened");
+  popupNewImg.classList.remove("popup_opened");
   popupContainer.classList.remove("popup-container-bg");
+}
+
+//Función para añadir nueva card desde el popup
+function addNewCard(evt) {
+  evt.preventDefault();
+  const cardTemplate = document.querySelector(
+    "#elements__card-template"
+  ).content;
+
+  const cardElement = cardTemplate
+    .querySelector(".elements__picture")
+    .cloneNode(true);
+
+  const cardTitleElement = cardElement.querySelector(".elements__picture-name");
+
+  const cardImgElement = cardElement.querySelector(".elements__picture-size");
+
+  cardTitleElement.textContent = formImgName.value;
+  cardImgElement.src = formImgLink.value;
+  cardImgElement.alt = "Imagen de: " + formImgName.value;
+
+  cardsContainer.prepend(cardElement);
+  closeAllPopups();
 }
 
 //Función para editar el popup "editar perfil"
@@ -131,3 +158,7 @@ closeBtn.forEach((button) => {
 //Esta sección es para que la información del popup de "editar perfil"
 //se actualice en la pantalla principal
 formElement.addEventListener("submit", handleProfileFormSubmit);
+
+//Esta sección es para que la información del formulario de "nuevo lugar"
+//se incluya en la pantalla principal
+newImgForm.addEventListener("submit", addNewCard);
