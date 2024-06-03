@@ -50,7 +50,7 @@ function handleProfileFormSubmit(event) {
   const aboutNode = document.querySelector(".profile__info-about");
   const inputAbout = document.querySelector(".form__edit-field_about");
 
-  if (inputName !== "" && inputAbout !== "") {
+  if (inputName !== "" || inputAbout !== "") {
     nameNode.textContent = inputName.value;
     aboutNode.textContent = inputAbout.value;
     closeAllPopups();
