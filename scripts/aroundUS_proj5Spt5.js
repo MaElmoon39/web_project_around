@@ -1,8 +1,69 @@
 let content = document.querySelector(".content");
+
+const initialCards = [
+  {
+    name: "Chinatown",
+    link: "../images/Chinatown_ManhattanUSA.jpg",
+    alt: "Chinatown Manhattan USA",
+  },
+
+  {
+    name: "Ghostbusters Headquarters",
+    link: "../images/GhostbustersHeadquarters_NY_USA.jpg",
+    alt: "Ghostbusters Headquarters USA",
+  },
+
+  {
+    name: "Guatapé",
+    link: "../images/Guatape_AntioquiaCOL.jpg",
+    alt: "Guatape Antioquia Colombia",
+  },
+
+  {
+    name: "Hong Kong",
+    link: "../images/HongKong_Streetnight.jpg",
+    alt: "Streetnight HongKong",
+  },
+
+  {
+    name: "Mochila Wayú",
+    link: "../images/MochilaWayu_CartagenaCOL.jpg",
+    alt: "MochilaWayu Cartagena Colombia",
+  },
+
+  {
+    name: "Suculentas",
+    link: "../images/suculentas.jpg",
+    alt: "Plantas de Suculentas Colombia",
+  },
+];
+
 let editProfileBtn = content.querySelector(".profile__info-edit");
 let addImgBtn = content.querySelector(".profile__add-img");
 let closeBtn = document.querySelectorAll(".popup__edit-close-btn");
 let formElement = document.querySelector(".form_profile");
+let cardsContainer = document.querySelector(".elements");
+
+//Función para agregar las cards al cargar la página
+initialCards.forEach((data) => {
+  const cardTemplate = document.querySelector(
+    "#elements__card-template"
+  ).content;
+
+  const cardElement = cardTemplate
+    .querySelector(".elements__picture")
+    .cloneNode(true);
+
+  const cardTitleElement = cardElement.querySelector(".elements__picture-name");
+
+  const cardImgElement = cardElement.querySelector(".elements__picture-size");
+
+  cardTitleElement.textContent = data.name;
+  cardImgElement.src = data.link;
+  cardImgElement.alt = data.alt;
+
+  cardsContainer.append(cardElement);
+});
 
 //Sección de declaración de funciones
 //Función para mostrar el popup de "editar perfil"
@@ -22,7 +83,8 @@ function editProfile() {
   inputAbout.value = aboutNode.textContent;
 }
 
-//Función para mostrar el popup de "nuevo lugar"
+//Función para mostrar el popup de "nuevo lugar" y
+//añadir nueva imagen al inicio del grupo
 function addImage() {
   const addNode = document.querySelector(".popup_add-image");
   addNode.classList.add("popup_opened");

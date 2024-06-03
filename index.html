@@ -47,139 +47,7 @@
           <button class="profile__add-img"></button>
         </section>
 
-        <section class="elements">
-          <!-- Picture #1 -->
-          <div class="elements__picture">
-            <img
-              class="elements__picture-size"
-              src="images/Chinatown_ManhattanUSA.jpg"
-              alt="Chinatown Manhattan USA"
-            />
-
-            <button class="elements__picture-trash-btn">
-              <img
-                class="elements__picture-vector-trash"
-                src="images/TrashButton.svg"
-                alt="Picture trash button"
-              />
-            </button>
-
-            <div class="elements__picture-name-section">
-              <h3 class="elements__picture-name">Chinatown</h3>
-              <button class="elements__picture-like-btn"></button>
-            </div>
-          </div>
-
-          <!-- Picture #2 -->
-          <div class="elements__picture">
-            <img
-              class="elements__picture-size"
-              src="images/GhostbustersHeadquarters_NY_USA.jpg"
-              alt="Ghostbusters Headquarters USA"
-            />
-
-            <button class="elements__picture-trash-btn">
-              <img
-                class="elements__picture-vector-trash"
-                src="images/TrashButton.svg"
-                alt="Picture trash button"
-              />
-            </button>
-
-            <div class="elements__picture-name-section">
-              <h3 class="elements__picture-name">Ghostbusters Headquarters</h3>
-              <button class="elements__picture-like-btn"></button>
-            </div>
-          </div>
-
-          <!-- Picture #3 -->
-          <div class="elements__picture">
-            <img
-              class="elements__picture-size"
-              src="images/Guatape_AntioquiaCOL.jpg"
-              alt="Guatape Antioquia Colombia"
-            />
-
-            <button class="elements__picture-trash-btn">
-              <img
-                class="elements__picture-vector-trash"
-                src="images/TrashButton.svg"
-                alt="Picture trash button"
-              />
-            </button>
-
-            <div class="elements__picture-name-section">
-              <h3 class="elements__picture-name">Guatapé</h3>
-              <button class="elements__picture-like-btn"></button>
-            </div>
-          </div>
-
-          <!-- Picture #4 -->
-          <div class="elements__picture">
-            <img
-              class="elements__picture-size"
-              src="images/HongKong_Streetnight.jpg"
-              alt="Streetnight HongKong"
-            />
-
-            <button class="elements__picture-trash-btn">
-              <img
-                class="elements__picture-vector-trash"
-                src="images/TrashButton.svg"
-                alt="Picture trash button"
-              />
-            </button>
-
-            <div class="elements__picture-name-section">
-              <h3 class="elements__picture-name">Hong Kong St</h3>
-              <button class="elements__picture-like-btn"></button>
-            </div>
-          </div>
-
-          <!-- Picture #5 -->
-          <div class="elements__picture">
-            <img
-              class="elements__picture-size"
-              src="images/MochilaWayu_CartagenaCOL.jpg"
-              alt="MochilaWayu Cartagena Colombia"
-            />
-
-            <button class="elements__picture-trash-btn">
-              <img
-                class="elements__picture-vector-trash"
-                src="images/TrashButton.svg"
-                alt="Picture trash button"
-              />
-            </button>
-
-            <div class="elements__picture-name-section">
-              <h3 class="elements__picture-name">Mochila Wayú</h3>
-              <button class="elements__picture-like-btn"></button>
-            </div>
-          </div>
-
-          <!-- Picture #6 -->
-          <div class="elements__picture">
-            <img
-              class="elements__picture-size"
-              src="images/suculentas.jpg"
-              alt="Plantas Suculentas Colombia"
-            />
-
-            <button class="elements__picture-trash-btn">
-              <img
-                class="elements__picture-vector-trash"
-                src="images/TrashButton.svg"
-                alt="Picture trash button"
-              />
-            </button>
-
-            <div class="elements__picture-name-section">
-              <h3 class="elements__picture-name">Suculentas</h3>
-              <button class="elements__picture-like-btn"></button>
-            </div>
-          </div>
-        </section>
+        <section class="elements"></section>
 
         <div class="popup-container">
           <section class="popup popup_profile">
@@ -262,6 +130,17 @@
         <p class="footer__copyright">&copy; 2024. María Tortello</p>
       </footer>
     </div>
+
+    <template id="elements__card-template">
+      <div class="elements__picture">
+        <img class="elements__picture-size" src="" alt="image template" />
+        <button class="elements__picture-trash-btn"></button>
+        <div class="elements__picture-name-section">
+          <h3 class="elements__picture-name"></h3>
+          <button class="elements__picture-like-btn"></button>
+        </div>
+      </div>
+    </template>
 
     <script src="scripts/aroundUS_proj5Spt5.js"></script>
   </body>
