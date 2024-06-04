@@ -4,8 +4,8 @@
   min-height: 743px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   row-gap: 21px;
+  column-gap: 17px;
 }
 
 .elements__picture {
