@@ -113,6 +113,11 @@ no aparezca el borde en toda la caja y se mantenga el texto en negro*/
   opacity: 80%;
 }
 
+.popup__big-img-name {
+  font-size: 12px;
+  line-height: 15px;
+}
+
 .popup__big-img {
   max-width: 75vw;
   max-height: 75vh;
