@@ -137,10 +137,6 @@ function closeAllPopups() {
   popupContainer.classList.remove("popup-container-bg");
 }
 
-Array.from(closePopupBtns).forEach((item) => {
-  item.addEventListener("click", closeAllPopups);
-});
-
 //Función para añadir nueva card desde el popup
 function addNewCard(evt) {
   evt.preventDefault();
