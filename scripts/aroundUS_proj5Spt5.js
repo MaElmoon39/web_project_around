@@ -42,13 +42,15 @@ let cardsContainer = document.querySelector(".elements");
 let addImgBtn = content.querySelector(".profile__add-img");
 
 let editProfileBtn = content.querySelector(".profile__info-edit");
-let closeBtn = document.querySelectorAll(".popup__edit-close-btn");
+let closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
 
 let formElement = document.querySelector(".form_profile");
 let popupNewImg = document.querySelector(".popup_add-image");
 let newImgForm = popupNewImg.querySelector(".form_add-card");
 let formImgName = popupNewImg.querySelector(".form__edit-field_image_name");
 let formImgLink = popupNewImg.querySelector(".form__edit-field_image_link");
+
+const openImage = document.querySelector(".popup_open-image");
 
 //Función para agregar las cards al cargar la página
 function loadCards(name, link, alter) {
@@ -77,6 +79,15 @@ function loadCards(name, link, alter) {
   const trashButton = cardElement.querySelector(".elements__picture-trash-btn");
   trashButton.addEventListener("click", () => {
     cardElement.remove();
+  });
+
+  //Esta sección permite visualizar la imagen más grande, una vez se da click en la card
+  cardImgElement.addEventListener("click", () => {
+    openImage.classList.add("popup_opened", "popup-container-bg");
+    openImage.querySelector(".popup__big-img").src = link;
+    openImage.querySelector(".popup__big-img").alt = alter;
+    openImage.querySelector(".popup__big-img-name").textContent = name;
+    // closeAllPopups();
   });
 
   return cardElement;
@@ -118,11 +129,17 @@ function addImage() {
 function closeAllPopups() {
   const closeProfileBtn = document.querySelector(".popup_profile");
   const popupContainer = document.querySelector(".popup-container");
+  const popupImgContainer = document.querySelector(".popup__edit-close-btn");
 
   closeProfileBtn.classList.remove("popup_opened");
   popupNewImg.classList.remove("popup_opened");
+  popupImgContainer.classList.remove("popup_opened");
   popupContainer.classList.remove("popup-container-bg");
 }
+
+Array.from(closePopupBtns).forEach((item) => {
+  item.addEventListener("click", closeAllPopups);
+});
 
 //Función para añadir nueva card desde el popup
 function addNewCard(evt) {

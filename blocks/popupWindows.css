@@ -3,7 +3,7 @@
 }
 
 .popup-container-bg {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
   left: 0;
@@ -29,6 +29,10 @@
   ); /*Esto ayuda a posicionar en el centro de la pantalla, independmt del tamaño*/
   opacity: 0;
   visibility: hidden;
+}
+
+.popup_openImg_transp {
+  background-color: transparent;
 }
 
 .popup_opened {
@@ -107,4 +111,13 @@ no aparezca el borde en toda la caja y se mantenga el texto en negro*/
 .form__edit-subm-btn:hover {
   cursor: pointer;
   opacity: 80%;
+}
+
+.popup__big-img {
+  max-width: 75vw;
+  max-height: 75vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
