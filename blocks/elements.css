@@ -1,7 +1,7 @@
 .elements {
   margin: 0 auto;
   max-width: 880px;
-  max-height: 743px;
+  min-height: 743px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -20,7 +20,7 @@
 
 .elements__picture-size {
   width: 282px;
-  max-height: 282px;
+  height: 282px;
   border-radius: 10px 10px 0 0;
 }
 
@@ -62,7 +62,7 @@
   overflow: hidden;
 }
 
-.elements__picture-like-btn {
+.elements__like-btn {
   width: 21px;
   height: 19px;
   border: none;
@@ -76,12 +76,11 @@
   color: #000;
 }
 
-.elements__picture-like-btn:hover {
+.elements__like-btn:hover {
   opacity: 0.5;
 }
 
-.elements__picture-like-btn:active {
-  opacity: 1;
+.elements__like-btn-active {
   background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart-filled.svg)
     center no-repeat;
 }

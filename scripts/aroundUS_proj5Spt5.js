@@ -51,7 +51,7 @@ let formImgName = popupNewImg.querySelector(".form__edit-field_image_name");
 let formImgLink = popupNewImg.querySelector(".form__edit-field_image_link");
 
 //Función para agregar las cards al cargar la página
-initialCards.forEach((data) => {
+function loadCards(name, link, alter) {
   const cardTemplate = document.querySelector(
     "#elements__card-template"
   ).content;
@@ -63,12 +63,28 @@ initialCards.forEach((data) => {
   const cardTitleElement = cardElement.querySelector(".elements__picture-name");
 
   const cardImgElement = cardElement.querySelector(".elements__picture-size");
+  cardTitleElement.textContent = name;
+  cardImgElement.src = link;
+  cardImgElement.alt = alter;
 
-  cardTitleElement.textContent = data.name;
-  cardImgElement.src = data.link;
-  cardImgElement.alt = data.alt;
+  //Esta sección permite activar el botón "me gusta"
+  const likeButton = cardElement.querySelector(".elements__like-btn");
+  likeButton.addEventListener("click", function (evt) {
+    evt.target.classList.toggle("elements__like-btn-active");
+  });
 
-  cardsContainer.append(cardElement);
+  //Esta sección permite eliminar la card
+  const trashButton = cardElement.querySelector(".elements__picture-trash-btn");
+  trashButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
+  return cardElement;
+}
+
+initialCards.forEach((data) => {
+  const cardNode = loadCards(data.name, data.link, data.alt);
+  cardsContainer.append(cardNode);
 });
 
 //Sección de declaración de funciones
@@ -111,23 +127,8 @@ function closeAllPopups() {
 //Función para añadir nueva card desde el popup
 function addNewCard(evt) {
   evt.preventDefault();
-  const cardTemplate = document.querySelector(
-    "#elements__card-template"
-  ).content;
-
-  const cardElement = cardTemplate
-    .querySelector(".elements__picture")
-    .cloneNode(true);
-
-  const cardTitleElement = cardElement.querySelector(".elements__picture-name");
-
-  const cardImgElement = cardElement.querySelector(".elements__picture-size");
-
-  cardTitleElement.textContent = formImgName.value;
-  cardImgElement.src = formImgLink.value;
-  cardImgElement.alt = "Imagen de: " + formImgName.value;
-
-  cardsContainer.prepend(cardElement);
+  const cardNode = loadCards(formImgName.value, formImgLink.value);
+  cardsContainer.prepend(cardNode);
   closeAllPopups();
 }
 
