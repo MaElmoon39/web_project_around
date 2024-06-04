@@ -42,7 +42,7 @@ let cardsContainer = document.querySelector(".elements");
 let addImgBtn = content.querySelector(".profile__add-img");
 
 let editProfileBtn = content.querySelector(".profile__info-edit");
-let closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
+const closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
 
 let formElement = document.querySelector(".form_profile");
 let popupNewImg = document.querySelector(".popup_add-image");
