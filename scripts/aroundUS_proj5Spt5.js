@@ -42,7 +42,7 @@ let cardsContainer = document.querySelector(".elements");
 let addImgBtn = content.querySelector(".profile__add-img");
 
 let editProfileBtn = content.querySelector(".profile__info-edit");
-const closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
+let closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
 
 let formElement = document.querySelector(".form_profile");
 let popupNewImg = document.querySelector(".popup_add-image");
@@ -129,7 +129,7 @@ function addImage() {
 function closeAllPopups() {
   const closeProfileBtn = document.querySelector(".popup_profile");
   const popupContainer = document.querySelector(".popup-container");
-  const popupImgContainer = document.querySelector(".popup_open-image");
+  const popupImgContainer = document.querySelector(".popup__edit-close-btn");
 
   closeProfileBtn.classList.remove("popup_opened");
   popupNewImg.classList.remove("popup_opened");
@@ -169,8 +169,8 @@ editProfileBtn.addEventListener("click", editProfile);
 addImgBtn.addEventListener("click", addImage);
 
 //Esta parte selecciona los botones X para cerrar los popups
-Array.from(closePopupBtns).forEach((item) => {
-  item.addEventListener("click", closeAllPopups);
+closeBtn.forEach((button) => {
+  button.addEventListener("click", closeAllPopups);
 });
 
 //Esta sección es para que la información del popup de "editar perfil"
