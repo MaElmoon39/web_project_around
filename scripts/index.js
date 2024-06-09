@@ -1,4 +1,19 @@
-let content = document.querySelector(".content");
+const content = document.querySelector(".content");
+const footer = content.querySelector(".footer");
+
+const cardsContainer = document.querySelector(".elements");
+const addImgBtn = content.querySelector(".profile__add-img");
+
+const editProfileBtn = content.querySelector(".profile__info-edit");
+const closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
+
+const formElement = document.querySelector(".form_profile");
+const popupNewImg = document.querySelector(".popup_add-image");
+const newImgForm = popupNewImg.querySelector(".form_add-card");
+const formImgName = popupNewImg.querySelector(".form__edit-field_image_name");
+const formImgLink = popupNewImg.querySelector(".form__edit-field_image_link");
+
+const openImage = document.querySelector(".popup_open-image");
 
 const initialCards = [
   {
@@ -38,20 +53,7 @@ const initialCards = [
   },
 ];
 
-let cardsContainer = document.querySelector(".elements");
-let addImgBtn = content.querySelector(".profile__add-img");
-
-let editProfileBtn = content.querySelector(".profile__info-edit");
-const closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
-
-let formElement = document.querySelector(".form_profile");
-let popupNewImg = document.querySelector(".popup_add-image");
-let newImgForm = popupNewImg.querySelector(".form_add-card");
-let formImgName = popupNewImg.querySelector(".form__edit-field_image_name");
-let formImgLink = popupNewImg.querySelector(".form__edit-field_image_link");
-
-const openImage = document.querySelector(".popup_open-image");
-
+//Sección de declaración de funciones
 //Función para agregar las cards al cargar la página
 function loadCards(name, link, alter) {
   const cardTemplate = document.querySelector(
@@ -100,7 +102,6 @@ initialCards.forEach((data) => {
   cardsContainer.append(cardNode);
 });
 
-//Sección de declaración de funciones
 //Función para mostrar el popup de "editar perfil"
 function editProfile() {
   const editNode = document.querySelector(".popup_profile");
