@@ -8,6 +8,10 @@
   column-gap: 17px;
 }
 
+.no-elements {
+  min-height: 0px;
+}
+
 .elements__picture {
   max-width: 282px;
   max-height: 361px;
