@@ -1,20 +1,15 @@
 .elements {
   margin: 0 auto;
   max-width: 880px;
-  min-height: 743px;
   display: flex;
   flex-wrap: wrap;
   row-gap: 21px;
   column-gap: 17px;
 }
 
-.no-elements {
-  min-height: 0px;
-}
-
 .elements__picture {
   max-width: 282px;
-  max-height: 361px;
+  min-height: 361px;
   position: relative;
 }
 
@@ -26,6 +21,7 @@
   width: 282px;
   height: 282px;
   border-radius: 10px 10px 0 0;
+  display: block;
 }
 
 .elements__picture-trash-btn {
