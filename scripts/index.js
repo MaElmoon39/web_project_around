@@ -55,7 +55,7 @@ const initialCards = [
 
 //Sección de declaración de funciones
 //Función para agregar las cards al cargar la página
-function loadCards(name, link, alter) {
+function loadCards(name, link) {
   const cardTemplate = document.querySelector(
     "#elements__card-template"
   ).content;
@@ -69,7 +69,6 @@ function loadCards(name, link, alter) {
   const cardImgElement = cardElement.querySelector(".elements__picture-size");
   cardTitleElement.textContent = name;
   cardImgElement.src = link;
-  cardImgElement.alt = alter;
 
   //Esta sección permite activar el botón "me gusta"
   const likeButton = cardElement.querySelector(".elements__like-btn");
@@ -87,7 +86,7 @@ function loadCards(name, link, alter) {
   cardImgElement.addEventListener("click", () => {
     openImage.classList.add("popup_opened", "popup-container-bg");
     openImage.querySelector(".popup__big-img").src = link;
-    openImage.querySelector(".popup__big-img").alt = alter;
+    openImage.querySelector(".popup__big-img").alt = "Imagen de: " + name;
     openImage.querySelector(".popup__big-img-name").textContent = name;
 
     const popupContainer = document.querySelector(".popup-container");
