@@ -70,6 +70,8 @@
                     name="nameProfile"
                     placeholder="Nombre"
                     required
+                    minlength="2"
+                    maxlength="40"
                   />
 
                   <input
@@ -79,6 +81,8 @@
                     name="about"
                     placeholder="Acerca de mí"
                     required
+                    minlength="2"
+                    maxlength="200"
                   />
 
                   <button class="form__edit-subm-btn" type="submit">
@@ -109,6 +113,8 @@
                     name="placeTitle"
                     placeholder="Título"
                     required
+                    minlength="2"
+                    maxlength="30"
                   />
 
                   <input
@@ -161,5 +167,6 @@
     </template>
 
     <script src="scripts/index.js"></script>
+    <script src="scripts/validate.js"></script>
   </body>
 </html>

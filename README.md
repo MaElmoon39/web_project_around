@@ -1,16 +1,16 @@
-# Tripleten web_project_around... la travesía continúa
+# Tripleten web_project_around... validando formularios y escuchando al teclado
 
-## Nombre del proyecto: Around the U.S.: Buttons interactivy with JS
+## Nombre del proyecto: Around the U.S.: Form validation and keyboard listening with JS
 
-El proyecto #6 del Sprint 6 del curso se comprende de una única gran etapa. En ésta (etapa), se busca afianzar los conocimientos adquiridos durante los capítulos teóricos y prácticos del Sprint 6 y algunos del Sprint 2, 3, 4 y 5, así como sacarle el máximo provecho a lo ya visto (además, de probar nuestro conocimiento 👩‍💻).
+El proyecto #7 del Sprint 7 del curso se comprende de una única gran etapa. En esta etapa se busca afianzar los conocimientos adquiridos durante los capítulos teóricos y prácticos del Sprint 7 y algunos temas ya vistos en los Sprint 2, 3, 4, 5 y 6 👩‍💻.
 
 ## Tecnologías y técnicas usadas:
 
-El proyecto del Sprint 6 se basa en la página desarrollada durante el Sprint 5, teniendo en cuenta además un archivo de Figma. La base del proyecto se enfoca en adicionar interactividad a los botones, para que los usuarios pueden añadir, eliminar o dar "me gusta" a las fotos que se despliegan en la ventana principal. Para lo anterior, se emplearon temas vistos a lo largo del curso hasta el Sprint #6, como: JS (un poco más de JS desde mi página web, arrays, bucles, tipos de declaración de funciones), manejo del DOM parte 2, metodología BEM, flexbox, grid layout, así como media quieries, debugging y contenido de Git Story, entre otros.
+El proyecto del Sprint 7 se basa en la página desarrollada durante los Sprints 5 y 6, teniendo en cuenta además un archivo de Figma el cual contiene el diseño de los campos de los formularios de editar perfil y adicionar nueva imagen. La base del proyecto se enfoca en validar los input de los formularios citados, adicionar restricciones en el número de caracteres de cada campo o verificar que lo tipeado en el campo de "Enlace de la imagen" corresponda a una URL (que empiece por http(s)://). Para lo anterior, se emplearon temas vistos a lo largo del curso hasta el Sprint #7, como: objetos (qué son, como crearlos, añadir, acceder e iterar propiedades, entre otros), gestión de eventos con el teclado y el mouse, eliminación de detectores de eventos, trabajar y validar formularios y depuración en JS, metodología BEM, flexbox, grid layout, así como media quieries, entre otros.
 
 ## Imágenes, GIF, screenshots de soporte
 
-Interactividad lograda durante el desarrollo del proyecto del Sprint 6:
+Validación e interactividad lograda durante el desarrollo del proyecto del Sprint 7:
 
 ## Enlace a GitHub Pages:
 

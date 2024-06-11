@@ -135,3 +135,8 @@ no aparezca el borde en toda la caja y se mantenga el texto en negro*/
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.popup_validat_inputs:invalid {
+  background-color: transparent;
+  border: 1px solid #f7f7f7;
+}
