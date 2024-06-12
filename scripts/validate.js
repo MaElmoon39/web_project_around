@@ -1,7 +1,7 @@
 //Esta sección muestra el mensaje de error:
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.add("form__input_type_error");
+  inputElement.classList.add("form__input-error");
   errorElement.textContent = errorMessage;
   errorElement.classList.add("form__input-error_active");
 };
@@ -9,7 +9,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
 //Esta sección oculta el mensaje de error:
 const hideInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.remove("form__input_type_error");
+  inputElement.classList.remove("form__input-error");
   errorElement.classList.remove("form__input-error_active");
   errorElement.textContent = "";
 };
@@ -73,4 +73,11 @@ const enableValidation = () => {
   });
 };
 
-enableValidation();
+enableValidation({
+  formSelector: ".form",
+  inputSelector: ".form__edit-field",
+  submitButtonSelector: ".form__edit-subm-btn",
+  inactiveButtonClass: "form__edit-subm-btn_disabled",
+  inputErrorClass: "form__input-error",
+  errorClass: "form__input-error_active",
+});
