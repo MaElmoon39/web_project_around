@@ -15,6 +15,8 @@ const formImgLink = popupNewImg.querySelector(".form__edit-field_image_link");
 
 const openImage = document.querySelector(".popup_open-image");
 
+const inputFields = Array.from(document.querySelectorAll(".form__edit-field"));
+
 const initialCards = [
   {
     name: "Chinatown",
@@ -162,6 +164,13 @@ function handleProfileFormSubmit(event) {
   }
 }
 
+//Función para cerrar el popup al detectar que se ha presionado la tecla escape
+function keyHandler(params) {
+  if (params.key === "Escape") {
+    closeAllPopups();
+  }
+}
+
 //Sección de llamado de funciones
 editProfileBtn.addEventListener("click", editProfile);
 addImgBtn.addEventListener("click", addImage);
@@ -178,3 +187,8 @@ formElement.addEventListener("submit", handleProfileFormSubmit);
 //Esta sección es para que la información del formulario de "nuevo lugar"
 //se incluya en la pantalla principal
 newImgForm.addEventListener("submit", addNewCard);
+
+//Esta sección permite cerrar el popup cuando se presiona tecla escape
+inputFields.forEach((inputElement) => {
+  inputElement.addEventListener("keydown", keyHandler);
+});
