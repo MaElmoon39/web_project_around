@@ -7,6 +7,8 @@ const addImgBtn = content.querySelector(".profile__add-img");
 const editProfileBtn = content.querySelector(".profile__info-edit");
 const closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
 
+const popupContainer = document.querySelector(".popup-container");
+const form = document.querySelectorAll(".form");
 const formElement = document.querySelector(".form_profile");
 const popupNewImg = document.querySelector(".popup_add-image");
 const newImgForm = popupNewImg.querySelector(".form_add-card");
@@ -171,6 +173,15 @@ function keyHandler(params) {
   }
 }
 
+//Función para cerrar popup al dar click por fuera del popup
+function closeHandler(evt) {
+  const popupSection = popupContainer.querySelector(".popup");
+  if (!popupSection.contains(evt.target)) {
+    // console.log("clicking inside popup");
+    closeAllPopups();
+  }
+}
+
 //Sección de llamado de funciones
 editProfileBtn.addEventListener("click", editProfile);
 addImgBtn.addEventListener("click", addImage);
@@ -192,3 +203,5 @@ newImgForm.addEventListener("submit", addNewCard);
 inputFields.forEach((inputElement) => {
   inputElement.addEventListener("keydown", keyHandler);
 });
+
+popupContainer.addEventListener("click", closeHandler);
