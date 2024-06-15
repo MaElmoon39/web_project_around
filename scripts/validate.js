@@ -57,7 +57,14 @@ const setEventListeners = (formElement) => {
 };
 
 //Esta sección se encarga de solicitar la validación:
-const enableValidation = () => {
+const enableValidation = (
+  formSelector,
+  inputSelector,
+  submitButtonSelector,
+  inactiveButtonClass,
+  inputErrorClass,
+  errorClass
+) => {
   const formList = Array.from(document.querySelectorAll(".form"));
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {

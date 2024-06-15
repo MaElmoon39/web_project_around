@@ -177,8 +177,8 @@ function keyHandler(params) {
 function closeHandler(evt) {
   const popupSection = popupContainer.querySelector(".popup");
   if (!popupSection.contains(evt.target)) {
-    // console.log("clicking inside popup");
-    closeAllPopups();
+    console.log("clicking inside popup");
+    //closeAllPopups();
   }
 }
 
