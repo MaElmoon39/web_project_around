@@ -1,5 +1,6 @@
+import { enableValidation } from "./validate.js";
+
 const content = document.querySelector(".content");
-const footer = content.querySelector(".footer");
 
 const cardsContainer = document.querySelector(".elements");
 const addImgBtn = content.querySelector(".profile__add-img");
@@ -7,8 +8,6 @@ const addImgBtn = content.querySelector(".profile__add-img");
 const editProfileBtn = content.querySelector(".profile__info-edit");
 const closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
 
-const popupContainer = document.querySelector(".popup-container");
-const form = document.querySelectorAll(".form");
 const formElement = document.querySelector(".form_profile");
 const popupNewImg = document.querySelector(".popup_add-image");
 const newImgForm = popupNewImg.querySelector(".form_add-card");
@@ -16,8 +15,6 @@ const formImgName = popupNewImg.querySelector(".form__edit-field_image_name");
 const formImgLink = popupNewImg.querySelector(".form__edit-field_image_link");
 
 const openImage = document.querySelector(".popup_open-image");
-
-const inputFields = Array.from(document.querySelectorAll(".form__edit-field"));
 
 const initialCards = [
   {
@@ -95,6 +92,7 @@ function loadCards(name, link) {
 
     const popupContainer = document.querySelector(".popup-container");
     popupContainer.classList.add("popup-container-bg");
+    document.addEventListener("keydown", keyHandler);
   });
 
   return cardElement;
@@ -109,6 +107,7 @@ initialCards.forEach((data) => {
 function editProfile() {
   const editNode = document.querySelector(".popup_profile");
   editNode.classList.add("popup_opened");
+  document.addEventListener("keydown", keyHandler);
 
   const popupContainer = document.querySelector(".popup-container");
   popupContainer.classList.add("popup-container-bg");
@@ -126,6 +125,7 @@ function editProfile() {
 //añadir nueva imagen al inicio del grupo
 function addImage() {
   popupNewImg.classList.add("popup_opened");
+  document.addEventListener("keydown", keyHandler);
 
   const popupContainer = document.querySelector(".popup-container");
   popupContainer.classList.add("popup-container-bg");
@@ -141,6 +141,7 @@ function closeAllPopups() {
   popupNewImg.classList.remove("popup_opened");
   popupImgContainer.classList.remove("popup_opened");
   popupContainer.classList.remove("popup-container-bg");
+  document.removeEventListener("keydown", keyHandler);
 }
 
 //Función para añadir nueva card desde el popup
@@ -149,6 +150,7 @@ function addNewCard(evt) {
   const cardNode = loadCards(formImgName.value, formImgLink.value);
   cardsContainer.prepend(cardNode);
   closeAllPopups();
+  evt.target.reset();
 }
 
 //Función para editar el popup "editar perfil"
@@ -164,6 +166,7 @@ function handleProfileFormSubmit(event) {
     aboutNode.textContent = inputAbout.value;
     closeAllPopups();
   }
+  event.target.reset();
 }
 
 //Función para cerrar el popup al detectar que se ha presionado la tecla escape
@@ -175,10 +178,9 @@ function keyHandler(params) {
 
 //Función para cerrar popup al dar click por fuera del popup
 function closeHandler(evt) {
-  const popupSection = popupContainer.querySelector(".popup");
-  if (!popupSection.contains(evt.target)) {
-    console.log("clicking inside popup");
-    //closeAllPopups();
+  const popup = evt.target;
+  if (popup.classList.contains("popup-container")) {
+    closeAllPopups();
   }
 }
 
@@ -199,9 +201,15 @@ formElement.addEventListener("submit", handleProfileFormSubmit);
 //se incluya en la pantalla principal
 newImgForm.addEventListener("submit", addNewCard);
 
-//Esta sección permite cerrar el popup cuando se presiona tecla escape
-inputFields.forEach((inputElement) => {
-  inputElement.addEventListener("keydown", keyHandler);
-});
+document
+  .querySelector(".popup-container")
+  .addEventListener("click", closeHandler);
 
-popupContainer.addEventListener("click", closeHandler);
+enableValidation({
+  formSelector: ".form",
+  inputSelector: ".form__edit-field",
+  submitButtonSelector: ".form__edit-subm-btn",
+  inactiveButtonClass: "form__edit-subm-btn_disabled",
+  inputErrorClass: "form__input_has-error",
+  errorClass: "form__input-error_active",
+});

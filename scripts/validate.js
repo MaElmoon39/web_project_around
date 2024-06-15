@@ -1,13 +1,18 @@
 //Esta sección muestra el mensaje de error:
-const showInputError = (formElement, inputElement, errorMessage) => {
+const showInputError = (
+  formElement,
+  inputElement,
+  errorMessage,
+  formConfig
+) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-  inputElement.classList.add("form__input-error");
+  inputElement.classList.add(formConfig.inputErrorClass);
   errorElement.textContent = errorMessage;
-  errorElement.classList.add("form__input-error_active");
+  errorElement.classList.add(formConfig.errorClass);
 };
 
 //Esta sección oculta el mensaje de error:
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement, formConfig) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove("form__input-error");
   errorElement.classList.remove("form__input-error_active");
@@ -16,11 +21,16 @@ const hideInputError = (formElement, inputElement) => {
 
 //Esta sección determina si un elemento de entrada es válido y
 //llama a las funciones de show / hide error según se requiera:
-const checkInputValidity = (formElement, inputElement) => {
+const checkInputValidity = (formElement, inputElement, formConfirm) => {
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
+    showInputError(
+      formElement,
+      inputElement,
+      inputElement.validationMessage,
+      formConfirm
+    );
   } else {
-    hideInputError(formElement, inputElement);
+    hideInputError(formElement, inputElement, formConfirm);
   }
 };
 
@@ -31,60 +41,43 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-const toggleButtonState = (inputList, buttonElement) => {
+const toggleButtonState = (inputList, buttonElement, formConfig) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add("button_inactive");
+    buttonElement.classList.add(formConfig.inactiveButtonClass);
   } else {
-    buttonElement.classList.remove("button_inactive");
+    buttonElement.classList.remove(formConfig.inactiveButtonClass);
   }
 };
 
 //Esta sección checa el formulario y el campo de entrada (input):
-const setEventListeners = (formElement) => {
+const setEventListeners = (formElement, formConfig) => {
   const inputList = Array.from(
-    formElement.querySelectorAll(".form__edit-field")
+    formElement.querySelectorAll(formConfig.inputSelector)
   );
 
-  const buttonElement = formElement.querySelectorAll(".form__edit-subm-btn");
-  toggleButtonState(inputList, buttonElement);
+  const buttonElement = formElement.querySelector(
+    formConfig.submitButtonSelector
+  );
+  toggleButtonState(inputList, buttonElement, formConfig);
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
-      checkInputValidity(formElement, inputElement);
-      toggleButtonState(formElement, buttonElement);
+      checkInputValidity(formElement, inputElement, formConfig);
+      toggleButtonState(inputList, buttonElement, formConfig);
     });
   });
 };
 
 //Esta sección se encarga de solicitar la validación:
-const enableValidation = (
-  formSelector,
-  inputSelector,
-  submitButtonSelector,
-  inactiveButtonClass,
-  inputErrorClass,
-  errorClass
-) => {
-  const formList = Array.from(document.querySelectorAll(".form"));
+export const enableValidation = (formConfig) => {
+  const formList = Array.from(
+    document.querySelectorAll(formConfig.formSelector)
+  );
   formList.forEach((formElement) => {
     formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
 
-    const divFormContainer = Array.from(
-      formElement.querySelectorAll(".popup__formContainer")
-    );
-    divFormContainer.forEach((divContainer) => {
-      setEventListeners(divContainer);
-    });
+    setEventListeners(formElement, formConfig);
   });
 };
-
-enableValidation({
-  formSelector: ".form",
-  inputSelector: ".form__edit-field",
-  submitButtonSelector: ".form__edit-subm-btn",
-  inactiveButtonClass: "form__edit-subm-btn_disabled",
-  inputErrorClass: "form__input-error",
-  errorClass: "form__input-error_active",
-});
