@@ -104,7 +104,7 @@ initialCards.forEach((data) => {
 });
 
 //Función para mostrar el popup de "editar perfil"
-function editProfile() {
+function editProfile(evt) {
   const editNode = document.querySelector(".popup_profile");
   editNode.classList.add("popup_opened");
   document.addEventListener("keydown", keyHandler);
@@ -154,8 +154,8 @@ function addNewCard(evt) {
 }
 
 //Función para editar el popup "editar perfil"
-function handleProfileFormSubmit(event) {
-  event.preventDefault();
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
   const nameNode = document.querySelector(".profile__info-name");
   const inputName = document.querySelector(".form__edit-field_profile_name");
   const aboutNode = document.querySelector(".profile__info-about");
@@ -166,7 +166,7 @@ function handleProfileFormSubmit(event) {
     aboutNode.textContent = inputAbout.value;
     closeAllPopups();
   }
-  event.target.reset();
+  evt.target.reset();
 }
 
 //Función para cerrar el popup al detectar que se ha presionado la tecla escape
