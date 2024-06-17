@@ -21,7 +21,7 @@ const hideInputError = (formElement, inputElement, formConfig) => {
 
 //Esta sección determina si un elemento de entrada es válido y
 //llama a las funciones de show / hide error según se requiera:
-export const checkInputValidity = (formElement, inputElement, formConfirm) => {
+const checkInputValidity = (formElement, inputElement, formConfirm) => {
   if (!inputElement.validity.valid) {
     showInputError(
       formElement,

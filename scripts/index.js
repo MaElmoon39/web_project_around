@@ -1,4 +1,4 @@
-import { checkInputValidity, enableValidation } from "./validate.js";
+import { enableValidation } from "./validate.js";
 
 const content = document.querySelector(".content");
 
