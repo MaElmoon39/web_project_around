@@ -1,4 +1,4 @@
-import { enableValidation } from "./validate.js";
+import { checkInputValidity, enableValidation } from "./validate.js";
 
 const content = document.querySelector(".content");
 
@@ -56,7 +56,7 @@ const initialCards = [
 
 //Sección de declaración de funciones
 //Función para agregar las cards al cargar la página
-function loadCards(name, link) {
+function loadCards(name, link, alt) {
   const cardTemplate = document.querySelector(
     "#elements__card-template"
   ).content;
@@ -70,6 +70,7 @@ function loadCards(name, link) {
   const cardImgElement = cardElement.querySelector(".elements__picture-size");
   cardTitleElement.textContent = name;
   cardImgElement.src = link;
+  cardImgElement.alt = alt || name;
 
   //Esta sección permite activar el botón "me gusta"
   const likeButton = cardElement.querySelector(".elements__like-btn");
@@ -148,6 +149,7 @@ function closeAllPopups() {
 function addNewCard(evt) {
   evt.preventDefault();
   const cardNode = loadCards(formImgName.value, formImgLink.value);
+
   cardsContainer.prepend(cardNode);
   closeAllPopups();
   evt.target.reset();
@@ -204,12 +206,3 @@ newImgForm.addEventListener("submit", addNewCard);
 document
   .querySelector(".popup-container")
   .addEventListener("click", closeHandler);
-
-enableValidation({
-  formSelector: ".form",
-  inputSelector: ".form__edit-field",
-  submitButtonSelector: ".form__edit-subm-btn",
-  inactiveButtonClass: "form__edit-subm-btn_disabled",
-  inputErrorClass: "form__input_has-error",
-  errorClass: "form__input-error_active",
-});

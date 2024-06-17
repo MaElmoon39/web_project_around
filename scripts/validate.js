@@ -21,7 +21,7 @@ const hideInputError = (formElement, inputElement, formConfig) => {
 
 //Esta sección determina si un elemento de entrada es válido y
 //llama a las funciones de show / hide error según se requiera:
-const checkInputValidity = (formElement, inputElement, formConfirm) => {
+export const checkInputValidity = (formElement, inputElement, formConfirm) => {
   if (!inputElement.validity.valid) {
     showInputError(
       formElement,
@@ -78,6 +78,21 @@ export const enableValidation = (formConfig) => {
       evt.preventDefault();
     });
 
+    formElement.addEventListener("keydown", (evt) => {
+      if (evt.key === "Enter") {
+        evt.preventDefault();
+      }
+    });
+
     setEventListeners(formElement, formConfig);
   });
 };
+
+enableValidation({
+  formSelector: ".form",
+  inputSelector: ".form__edit-field",
+  submitButtonSelector: ".form__edit-subm-btn",
+  inactiveButtonClass: "form__edit-subm-btn_disabled",
+  inputErrorClass: "form__input-error_active",
+  errorClass: "form__input-error_active",
+});
