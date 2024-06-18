@@ -74,16 +74,6 @@ export const enableValidation = (formConfig) => {
     document.querySelectorAll(formConfig.formSelector)
   );
   formList.forEach((formElement) => {
-    formElement.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-    });
-
-    formElement.addEventListener("keydown", (evt) => {
-      if (evt.key === "Enter") {
-        evt.preventDefault();
-      }
-    });
-
     setEventListeners(formElement, formConfig);
   });
 };

@@ -122,8 +122,7 @@ function editProfile(evt) {
   inputAbout.value = aboutNode.textContent;
 }
 
-//Función para mostrar el popup de "nuevo lugar" y
-//añadir nueva imagen al inicio del grupo
+//Función para mostrar el popup de "nuevo lugar"
 function addImage() {
   popupNewImg.classList.add("popup_opened");
   document.addEventListener("keydown", keyHandler);
@@ -150,8 +149,11 @@ function addNewCard(evt) {
   evt.preventDefault();
   const cardNode = loadCards(formImgName.value, formImgLink.value);
 
-  cardsContainer.prepend(cardNode);
-  closeAllPopups();
+  if (formImgName.value !== "" && formImgLink.value !== "") {
+    cardsContainer.prepend(cardNode);
+    closeAllPopups();
+  }
+
   evt.target.reset();
 }
 
