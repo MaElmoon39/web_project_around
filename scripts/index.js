@@ -1,4 +1,4 @@
-import { enableValidation } from "./validate.js";
+import { enableValidation } from "./FormValidator.js";
 
 const content = document.querySelector(".content");
 
