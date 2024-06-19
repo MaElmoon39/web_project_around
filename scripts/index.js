@@ -1,4 +1,4 @@
-import { enableValidation } from "./FormValidator.js";
+import { formProfileValidated } from "./FormValidator.js";
 
 const content = document.querySelector(".content");
 
