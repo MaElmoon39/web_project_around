@@ -1,5 +1,4 @@
 const addImgBtn = document.querySelector(".profile__add-img");
-
 const editProfileBtn = document.querySelector(".profile__info-edit");
 const closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
 const popupNewImg = document.querySelector(".popup_add-image");

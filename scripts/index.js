@@ -1,16 +1,9 @@
 import { formProfileValidated } from "./FormValidator.js";
 import { closeAllPopups, closeHandler, keyHandler } from "./utils.js";
 
-const content = document.querySelector(".content");
-
 const cardsContainer = document.querySelector(".elements");
-// const addImgBtn = content.querySelector(".profile__add-img");
-
-// const editProfileBtn = content.querySelector(".profile__info-edit");
-// const closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
 
 const formElement = document.querySelector(".form_profile");
-// const popupNewImg = document.querySelector(".popup_add-image");
 const newImgForm = document.querySelector(".form_add-card");
 const formImgName = document.querySelector(".form__edit-field_image_name");
 const formImgLink = document.querySelector(".form__edit-field_image_link");
@@ -105,46 +98,6 @@ initialCards.forEach((data) => {
   cardsContainer.append(cardNode);
 });
 
-//Función para mostrar el popup de "editar perfil"
-/* function editProfile(evt) {
-  const editNode = document.querySelector(".popup_profile");
-  editNode.classList.add("popup_opened");
-  document.addEventListener("keydown", keyHandler);
-
-  const popupContainer = document.querySelector(".popup-container");
-  popupContainer.classList.add("popup-container-bg");
-
-  let nameNode = document.querySelector(".profile__info-name");
-  let inputName = document.querySelector(".form__edit-field_profile_name");
-  let aboutNode = document.querySelector(".profile__info-about");
-  let inputAbout = document.querySelector(".form__edit-field_about");
-
-  inputName.value = nameNode.textContent;
-  inputAbout.value = aboutNode.textContent;
-}
-
-//Función para mostrar el popup de "nuevo lugar"
-function addImage() {
-  popupNewImg.classList.add("popup_opened");
-  document.addEventListener("keydown", keyHandler);
-
-  const popupContainer = document.querySelector(".popup-container");
-  popupContainer.classList.add("popup-container-bg");
-}
-
-//Función para cerrar los popups
-function closeAllPopups() {
-  const closeProfileBtn = document.querySelector(".popup_profile");
-  const popupContainer = document.querySelector(".popup-container");
-  const popupImgContainer = document.querySelector(".popup_open-image");
-
-  closeProfileBtn.classList.remove("popup_opened");
-  popupNewImg.classList.remove("popup_opened");
-  popupImgContainer.classList.remove("popup_opened");
-  popupContainer.classList.remove("popup-container-bg");
-  document.removeEventListener("keydown", keyHandler);
-}*/
-
 //Función para añadir nueva card desde el popup
 function addNewCard(evt) {
   evt.preventDefault();
@@ -173,30 +126,6 @@ function handleProfileFormSubmit(evt) {
   }
   evt.target.reset();
 }
-
-//Función para cerrar el popup al detectar que se ha presionado la tecla escape
-/* function keyHandler(params) {
-  if (params.key === "Escape") {
-    closeAllPopups();
-  }
-}
-
-//Función para cerrar popup al dar click por fuera del popup
-function closeHandler(evt) {
-  const popup = evt.target;
-  if (popup.classList.contains("popup-container")) {
-    closeAllPopups();
-  }
-}
-
-//Sección de llamado de funciones
-editProfileBtn.addEventListener("click", editProfile);
-addImgBtn.addEventListener("click", addImage);
-
-//Esta parte selecciona los botones X para cerrar los popups
-Array.from(closePopupBtns).forEach((item) => {
-  item.addEventListener("click", closeAllPopups);
-});*/
 
 //Esta sección es para que la información del popup de "editar perfil"
 //se actualice en la pantalla principal
