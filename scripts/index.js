@@ -38,12 +38,9 @@ function handleProfileFormSubmit(evt) {
   const aboutNode = document.querySelector(".profile__info-about");
   const inputAbout = document.querySelector(".form__edit-field_about");
 
-  if (inputName.value.length > 3 || inputAbout.value.length > 3) {
+  if (inputName.value.length > 2 && inputAbout.value.length > 2) {
     nameNode.textContent = inputName.value;
     aboutNode.textContent = inputAbout.value;
-    console.log(inputName.value.length);
-    console.log(inputAbout.value.length);
-
     closeAllPopups();
   }
   evt.target.reset();
