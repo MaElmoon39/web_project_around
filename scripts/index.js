@@ -1,5 +1,5 @@
 import { formProfileValidated } from "./FormValidator.js";
-import { closeAllPopups, closeHandler, keyHandler } from "./utils.js";
+import { closeAllPopups, closeHandler } from "./utils.js";
 import { initialCards } from "./Card.js";
 import Card from "./Card.js";
 
@@ -38,13 +38,18 @@ function handleProfileFormSubmit(evt) {
   const aboutNode = document.querySelector(".profile__info-about");
   const inputAbout = document.querySelector(".form__edit-field_about");
 
-  if (inputName !== "" || inputAbout !== "") {
+  if (inputName.value.length > 3 || inputAbout.value.length > 3) {
     nameNode.textContent = inputName.value;
     aboutNode.textContent = inputAbout.value;
+    console.log(inputName.value.length);
+    console.log(inputAbout.value.length);
+
     closeAllPopups();
   }
   evt.target.reset();
 }
+
+//Sección de llamado de funciones
 
 //Esta sección es para que la información del popup de "editar perfil"
 //se actualice en la pantalla principal

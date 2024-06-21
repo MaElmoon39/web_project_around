@@ -58,16 +58,6 @@ export default class Card {
     return cardTemplate;
   }
 
-  /* _toggleLikeBtn() {
-    this._likeButton = this._getTemplate();
-    this._likeButton.querySelector(".elements__like-btn");
-  }
-
-  _toggleTrashBtn() {
-    this._trashButton = this._getTemplate();
-    this._trashButton.querySelector(".elements__picture-trash-btn");
-  } */
-
   //Esta función adiciona la información de nombre y link al template
   generateCard() {
     this._cardElement = this._getTemplate();
@@ -90,21 +80,21 @@ export default class Card {
 
   //Esta función agrega todos los controladores de eventos (like/trash/openBigImg buttons)
   _setEventListeners() {
-    this._button = this._getTemplate();
-    this._likeButton = this._button.querySelector(".elements__like-btn");
-    this._trashButton = this._button.querySelector(
+    this._likeButton = this._cardElement.querySelector(".elements__like-btn");
+    this._trashButton = this._cardElement.querySelector(
       ".elements__picture-trash-btn"
     );
+
     this._cardImgElement = this._cardElement.querySelector(
       ".elements__picture-size"
     );
 
-    this._trashButton.addEventListener("click", () => {
-      this._cardElement.remove();
-    });
-
     this._likeButton.addEventListener("click", function (evt) {
       evt.target.classList.toggle("elements__like-btn-active");
+    });
+
+    this._trashButton.addEventListener("click", () => {
+      this._cardElement.remove();
     });
 
     //Esta sección permite visualizar la imagen más grande, una vez se da click en una card
