@@ -1,14 +1,5 @@
-const formConfig = {
-  formSelector: ".form",
-  inputSelector: ".form__edit-field",
-  submitButtonSelector: ".form__edit-subm-btn",
-  inactiveButtonClass: "form__edit-subm-btn_disabled",
-  inputErrorClass: "form__input-error_active",
-  errorClass: "form__input-error_active",
-};
-
 //Configuración clase FormValidator:
-class FormValidator {
+export default class FormValidator {
   constructor(formConfig, formElement) {
     this._formConfig = formConfig;
     this._formElement = formElement;
@@ -88,8 +79,3 @@ class FormValidator {
     });
   }
 }
-
-const initialValidation = new FormValidator(formConfig);
-
-export const formProfileValidated =
-  initialValidation.enableValidation(formConfig);
