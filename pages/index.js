@@ -1,7 +1,7 @@
-import FormValidator from "./FormValidator.js";
-import { closeAllPopups, closeHandler } from "./utils.js";
-import { initialCards } from "./constants.js";
-import Card from "./Card.js";
+import FormValidator from "../components/FormValidator.js";
+import { closeAllPopups, closeHandler } from "../components/utils.js";
+import { initialCards, formConfig } from "../components/constants.js";
+import Card from "../components/Card.js";
 
 const cardsContainer = document.querySelector(".elements");
 
@@ -9,15 +9,6 @@ const formElement = document.querySelector(".form_profile");
 const newImgForm = document.querySelector(".form_add-card");
 const formImgName = document.querySelector(".form__edit-field_image_name");
 const formImgLink = document.querySelector(".form__edit-field_image_link");
-
-const formConfig = {
-  formSelector: ".form",
-  inputSelector: ".form__edit-field",
-  submitButtonSelector: ".form__edit-subm-btn",
-  inactiveButtonClass: "form__edit-subm-btn_disabled",
-  inputErrorClass: "form__input-error_active",
-  errorClass: "form__input-error_active",
-};
 
 initialCards.forEach((data) => {
   const cardNode = new Card(data.name, data.link, data.alt);

@@ -35,3 +35,12 @@ export const initialCards = [
     alt: "Plantas de Suculentas Colombia",
   },
 ];
+
+export const formConfig = {
+  formSelector: ".form",
+  inputSelector: ".form__edit-field",
+  submitButtonSelector: ".form__edit-subm-btn",
+  inactiveButtonClass: "form__edit-subm-btn_disabled",
+  inputErrorClass: "form__input-error_active",
+  errorClass: "form__input-error_active",
+};
