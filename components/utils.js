@@ -4,13 +4,14 @@ const closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
 const popupNewImg = document.querySelector(".popup_add-image");
 
 //Función para mostrar el popup de "editar perfil"
-function editProfile(evt) {
+export function editProfile() {
+  //eliminar desde aquí
   const editNode = document.querySelector(".popup_profile");
   editNode.classList.add("popup_opened");
   document.addEventListener("keydown", keyHandler);
 
   const popupContainer = document.querySelector(".popup-container");
-  popupContainer.classList.add("popup-container-bg");
+  popupContainer.classList.add("popup-container-bg"); // hasta aquí
 
   let nameNode = document.querySelector(".profile__info-name");
   let inputName = document.querySelector(".form__edit-field_profile_name");

@@ -36,6 +36,8 @@ export const initialCards = [
   },
 ];
 
+export const cardsContainer = ".elements";
+
 export const formConfig = {
   formSelector: ".form",
   inputSelector: ".form__edit-field",

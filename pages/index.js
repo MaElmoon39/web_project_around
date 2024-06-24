@@ -1,14 +1,28 @@
 import FormValidator from "../components/FormValidator.js";
 import { closeAllPopups, closeHandler } from "../components/utils.js";
-import { initialCards, formConfig } from "../components/constants.js";
+import {
+  initialCards,
+  formConfig,
+  //cardsContainer,
+} from "../components/constants.js";
 import Card from "../components/Card.js";
+// import Section from "../components/Section.js";
+// import Popup from "../components/Popup.js";
 
-const cardsContainer = document.querySelector(".elements");
+const cardsContainer = document.querySelector(".elements"); //eliminar
 
 const formElement = document.querySelector(".form_profile");
 const newImgForm = document.querySelector(".form_add-card");
 const formImgName = document.querySelector(".form__edit-field_image_name");
 const formImgLink = document.querySelector(".form__edit-field_image_link");
+
+/*
+const firstLoadCards = new Section({initialCards, renderer: (item) => {
+  const cardNode = new Card(item.name, item.link, item.alt);
+  const cardElement = cardNode.generateCard();
+  firstLoadCards.addItem(cardElement);
+  }}, cardsContainer);
+*/
 
 initialCards.forEach((data) => {
   const cardNode = new Card(data.name, data.link, data.alt);
