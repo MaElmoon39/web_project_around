@@ -70,7 +70,7 @@ export default class Card {
 
       const popupContainer = document.querySelector(".popup-container");
       popupContainer.classList.add("popup-container-bg");
-      document.addEventListener("keydown", keyHandler); //eliminar
+      document.addEventListener("keydown", keyHandler);
     });
   }
 }

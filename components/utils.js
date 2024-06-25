@@ -67,4 +67,4 @@ Array.from(closePopupBtns).forEach((item) => {
   item.addEventListener("click", () => {
     closeAllPopups();
   });
-});
+}); //eliminar este bloque
