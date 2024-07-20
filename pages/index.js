@@ -2,6 +2,7 @@ import FormValidator from "../components/FormValidator.js";
 import { closeAllPopups, closeHandler } from "../components/utils.js";
 import { initialCards, formConfig } from "../components/constants.js";
 import Card from "../components/Card.js";
+import UserInfo from "../components/UserInfo.js";
 
 const cardsContainer = document.querySelector(".elements");
 
@@ -34,8 +35,8 @@ function addNewCard(evt) {
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   const nameNode = document.querySelector(".profile__info-name");
-  const inputName = document.querySelector(".form__edit-field_profile_name");
   const aboutNode = document.querySelector(".profile__info-about");
+  const inputName = document.querySelector(".form__edit-field_profile_name");
   const inputAbout = document.querySelector(".form__edit-field_about");
 
   if (inputName.value.length > 2 && inputAbout.value.length > 2) {
