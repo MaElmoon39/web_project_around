@@ -1,11 +1,9 @@
-class Popup {
-  constructor() {}
-}
+export default class Popup {
+  constructor(popupSelector) {
+    this._popupSelector = popupSelector;
+  }
 
-class PopupWithForms extends Popup {
-  constructor() {}
-}
+  open() {}
 
-class PopupWithImage extends Popup {
-  constructor() {}
+  close() {}
 }
