@@ -17,3 +17,6 @@ Validación e interactividad mantenida a partir de los cambios efectuados durant
 ## Enlace a GitHub Pages:
 
 Link: https://maelmoon39.github.io/web_project_around
+
+## Nota aclaratoria:
+Debido a cambio de cohorte, este ejercicio corresponde al proyecto #11, el cual inició en el sprint 7 (primera versión del proyecto "web_project_around"), para la cohorte 16. Los sprints relacionados líneas arriba, corresponden a la cohorte 13 (en la que inicié el bootcamp).
