@@ -1,16 +1,15 @@
-import { keyHandler } from "./utils.js";
-
 const openImage = document.querySelector(".popup_open-image");
 
 export default class Card {
-  constructor(cardName, cardLink, cardAlt, cardContainer) {
+  constructor(cardName, cardLink, cardAlt, cardContainer, handleCardClick) {
     this._cardName = cardName;
     this._cardAlt = cardAlt;
     this._cardLink = cardLink;
     this._cardContainer = cardContainer;
+    this.handleCardClick = handleCardClick;
   }
 
-  //Esta función encuentra el template y procesa su contenido
+  //Este método encuentra el template y procesa su contenido
   _getTemplate() {
     const cardTemplate = document
       .querySelector("#elements__card-template")
@@ -67,6 +66,7 @@ export default class Card {
         "Imagen de: " + this._cardName;
       openImage.querySelector(".popup__big-img-name").textContent =
         this._cardName;
+      openImage.handleCardClick(this._cardName, this._cardLink);
 
       const popupContainer = document.querySelector(".popup-container");
       popupContainer.classList.add("popup-container-bg");

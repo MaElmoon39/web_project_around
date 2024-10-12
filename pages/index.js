@@ -37,7 +37,9 @@ addImgBtn.addEventListener("click", () => {
 });
 
 initialCards.forEach((data) => {
-  const cardNode = new Card(data.name, data.link, data.alt);
+  const cardNode = new Card(data.name, data.link, data.alt, () => {
+    popupImage.open(data.name, data.link);
+  });
   const cardElement = cardNode.generateCard();
   cardsContainer.append(cardElement);
 });
@@ -45,7 +47,9 @@ initialCards.forEach((data) => {
 //Función para añadir nueva card desde el popup
 function addNewCard(evt) {
   evt.preventDefault();
-  const cardNode = new Card(formImgName.value, formImgLink.value);
+  const cardNode = new Card(formImgName.value, formImgLink.value, () => {
+    popupImage.open(formImgName.value, formImgLink.value);
+  });
   const cardElement = cardNode.generateCard();
 
   if (formImgName.value !== "" && formImgLink.value !== "") {
