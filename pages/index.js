@@ -1,15 +1,40 @@
 import FormValidator from "../components/FormValidator.js";
-import { closeAllPopups, closeHandler } from "../components/utils.js";
+import {
+  addImage,
+  addImgBtn,
+  closeAllPopups,
+  closeHandler,
+  editProfile,
+} from "../components/utils.js";
 import { initialCards, formConfig } from "../components/constants.js";
 import Card from "../components/Card.js";
-//import Popup from "../components/Popup.js";
+import PopupWithForms from "../components/PopupWithForms.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 
 const cardsContainer = document.querySelector(".elements");
 
 const formElement = document.querySelector(".form_profile");
+const editProfileBtn = document.querySelector(".profile__info-edit");
 const newImgForm = document.querySelector(".form_add-card");
+const addImgBtn = document.querySelector(".profile__add-img");
 const formImgName = document.querySelector(".form__edit-field_image_name");
 const formImgLink = document.querySelector(".form__edit-field_image_link");
+
+const popupProfile = new PopupWithForms(".popup_profile");
+const popupCards = new PopupWithForms(".popup_add-image");
+const popupImage = new PopupWithImage(".popup_open-image");
+
+popupProfile.setEventListeners();
+popupCards.setEventListeners();
+popupImage.setEventListeners();
+
+editProfileBtn.addEventListener("click", () => {
+  popupProfile.open();
+});
+
+addImgBtn.addEventListener("click", () => {
+  popupCards.open();
+});
 
 initialCards.forEach((data) => {
   const cardNode = new Card(data.name, data.link, data.alt);

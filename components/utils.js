@@ -1,10 +1,10 @@
-const addImgBtn = document.querySelector(".profile__add-img");
+export const addImgBtn = document.querySelector(".profile__add-img");
 const editProfileBtn = document.querySelector(".profile__info-edit");
 const closePopupBtns = document.querySelectorAll(".popup__edit-close-btn");
 const popupNewImg = document.querySelector(".popup_add-image");
 
 //Función para mostrar el popup de "editar perfil"
-function editProfile(evt) {
+export function editProfile(evt) {
   const editNode = document.querySelector(".popup_profile");
   editNode.classList.add("popup_opened");
   document.addEventListener("keydown", keyHandler);
@@ -22,7 +22,7 @@ function editProfile(evt) {
 }
 
 //Función para mostrar el popup de "nuevo lugar"
-function addImage() {
+export function addImage() {
   popupNewImg.classList.add("popup_opened");
   document.addEventListener("keydown", keyHandler);
 
