@@ -2,6 +2,7 @@ import FormValidator from "../components/FormValidator.js";
 import { closeAllPopups, closeHandler } from "../components/utils.js";
 import { initialCards, formConfig } from "../components/constants.js";
 import Card from "../components/Card.js";
+//import Popup from "../components/Popup.js";
 
 const cardsContainer = document.querySelector(".elements");
 

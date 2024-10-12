@@ -1,19 +1,47 @@
-import { keyHandler, closeHandler } from "./utils.js";
-
 export default class Popup {
   constructor(popupSelector) {
-    this._popupSelector = document.querySelector(popupSelector);
+    this._popupElement = document.querySelector(popupSelector);
+    this._closeButton = this._popupElement.querySelector(
+      ".popup__edit-close-btn"
+    );
+    this._handleEscClose = this._handleEscClose.bind(this);
   }
 
-  _handleEscClose() {
-    document.addEventListener("keydown", keyHandler);
+  //Método para abrir los popups
+  open() {
+    this._popupElement.classList.add("popup_opened");
+    document.addEventListener("keydown", this._handleEscClose);
   }
 
-  open() {}
-
+  //Método para cerrar los popups
   close() {
-    this._popupSelector.addEventListener("click", closeHandler);
+    this._popupElement.classList.remove("popup_opened");
+    document.removeEventListener("keydown", this._handleEscClose);
   }
 
-  setEventListeners() {}
+  //Método para cerrar el popup al detectar que se ha presionado la tecla escape
+  _handleEscClose(evt) {
+    if (evt.key === "Escape") {
+      this.close();
+    }
+  }
+
+  //Método para cerrar popup al dar click por fuera de la ventana modal: 1_definición
+  _closeHandler(evt) {
+    return evt.target.classList.contains("popup-container");
+  }
+
+  //Esta parte selecciona los botones X para cerrar los popups
+  setEventListeners() {
+    this._closeButton.addEventListeners("click", () => {
+      this.close();
+    });
+
+    //Método para cerrar popup al dar click por fuera de la ventana modal: 2_llamado de validación
+    this._popupElement.addEventListener("click", (evt) => {
+      if (this._closeHandler(evt)) {
+        this.close();
+      }
+    });
+  }
 }
