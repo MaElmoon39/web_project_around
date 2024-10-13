@@ -36,6 +36,16 @@ export const initialCards = [
   },
 ];
 
+export const addImgBtn = document.querySelector(".profile__add-img");
+export const cardsContainer = document.querySelector(".elements");
+export const defaultName = document.querySelector(".profile__info-name");
+export const defaultAbout = document.querySelector(".profile__info-about");
+export const inputName = document.querySelector(
+  ".form__edit-field_profile_name"
+);
+export const inputAbout = document.querySelector(".form__edit-field_about");
+export const editProfileBtn = document.querySelector(".profile__info-edit");
+
 export const formConfig = {
   formSelector: ".form",
   inputSelector: ".form__edit-field",

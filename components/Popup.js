@@ -27,7 +27,7 @@ export default class Popup {
   }
 
   //Método para cerrar popup al dar click por fuera de la ventana modal: 1_definición
-  _closeHandler(evt) {
+  closeHandler(evt) {
     return evt.target.classList.contains("popup-container");
   }
 
@@ -39,7 +39,7 @@ export default class Popup {
 
     //Método para cerrar popup al dar click por fuera de la ventana modal: 2_llamado de validación
     this._popupElement.addEventListener("click", (evt) => {
-      if (this._closeHandler(evt)) {
+      if (this.closeHandler(evt)) {
         this.close();
       }
     });

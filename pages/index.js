@@ -1,22 +1,23 @@
 import FormValidator from "../components/FormValidator.js";
 import {
-  addImage,
   addImgBtn,
-  closeAllPopups,
-  closeHandler,
-  editProfile,
-} from "../components/utils.js";
+  cardsContainer,
+  defaultName,
+  defaultAbout,
+  inputName,
+  inputAbout,
+  editProfileBtn,
+} from "../components/constants.js";
 import { initialCards, formConfig } from "../components/constants.js";
 import Card from "../components/Card.js";
+import UserInfo from "../components/UserInfo.js";
 import PopupWithForms from "../components/PopupWithForms.js";
 import PopupWithImage from "../components/PopupWithImage.js";
-
-const cardsContainer = document.querySelector(".elements");
+import { closeHandler } from "../components/utils.js";
 
 const formElement = document.querySelector(".form_profile");
-const editProfileBtn = document.querySelector(".profile__info-edit");
 const newImgForm = document.querySelector(".form_add-card");
-const addImgBtn = document.querySelector(".profile__add-img");
+
 const formImgName = document.querySelector(".form__edit-field_image_name");
 const formImgLink = document.querySelector(".form__edit-field_image_link");
 
@@ -24,9 +25,9 @@ const popupProfile = new PopupWithForms(".popup_profile");
 const popupCards = new PopupWithForms(".popup_add-image");
 const popupImage = new PopupWithImage(".popup_open-image");
 
-popupProfile.setEventListeners();
-popupCards.setEventListeners();
-popupImage.setEventListeners();
+//popupProfile.setEventListeners();
+// popupCards.setEventListeners();
+// popupImage.setEventListeners();
 
 editProfileBtn.addEventListener("click", () => {
   popupProfile.open();
@@ -54,7 +55,7 @@ function addNewCard(evt) {
 
   if (formImgName.value !== "" && formImgLink.value !== "") {
     cardsContainer.prepend(cardElement);
-    closeAllPopups();
+    popupImage.close();
   }
 
   evt.target.reset();
@@ -64,8 +65,8 @@ function addNewCard(evt) {
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   const nameNode = document.querySelector(".profile__info-name");
-  const inputName = document.querySelector(".form__edit-field_profile_name");
   const aboutNode = document.querySelector(".profile__info-about");
+  const inputName = document.querySelector(".form__edit-field_profile_name");
   const inputAbout = document.querySelector(".form__edit-field_about");
 
   if (inputName.value.length > 2 && inputAbout.value.length > 2) {
@@ -80,15 +81,18 @@ function handleProfileFormSubmit(evt) {
 
 //Esta sección es para que la información del popup de "editar perfil"
 //se actualice en la pantalla principal
-formElement.addEventListener("submit", handleProfileFormSubmit);
+formElement.addEventListener("submit", () => {
+  const updatedProfile = new UserInfo({ defaultName, defaultAbout });
+  updatedProfile.setUserInfo(inputName, inputAbout);
+});
 
 //Esta sección es para que la información del formulario de "nuevo lugar"
 //se incluya en la pantalla principal
 newImgForm.addEventListener("submit", addNewCard);
 
-document
-  .querySelector(".popup-container")
-  .addEventListener("click", closeHandler);
+// document.querySelector(".popup-container").addEventListener("click", () => {
+//   document.closeHandler();
+// });
 
 const initialValidation = new FormValidator(formConfig);
 

@@ -11,4 +11,8 @@ export default class PopupWithForms extends Popup {
     this._imageElement.textContent = name;
     this._imageElement.src = link;
   }
+
+  setEventListeners() {
+    super.setEventListeners();
+  }
 }
