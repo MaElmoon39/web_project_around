@@ -33,7 +33,7 @@ export default class Popup {
 
   //Esta parte selecciona los botones X para cerrar los popups
   setEventListeners() {
-    this._closeButton.addEventListeners("click", () => {
+    this._closeButton.addEventListener("click", () => {
       this.close();
     });
 

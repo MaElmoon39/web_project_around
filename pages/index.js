@@ -25,9 +25,9 @@ const popupProfile = new PopupWithForms(".popup_profile");
 const popupCards = new PopupWithForms(".popup_add-image");
 const popupImage = new PopupWithImage(".popup_open-image");
 
-//popupProfile.setEventListeners();
-// popupCards.setEventListeners();
-// popupImage.setEventListeners();
+popupProfile.setEventListeners();
+popupCards.setEventListeners();
+popupImage.setEventListeners();
 
 editProfileBtn.addEventListener("click", () => {
   popupProfile.open();

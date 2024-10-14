@@ -1,4 +1,5 @@
 const openImage = document.querySelector(".popup_open-image");
+import Popup from "./Popup.js";
 
 export default class Card {
   constructor(cardName, cardLink, cardAlt, cardContainer, handleCardClick) {
