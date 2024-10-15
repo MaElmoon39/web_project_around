@@ -5,16 +5,15 @@ export default class UserInfo {
   }
 
   //Método que devuelve un objeto con información sobre el usuario:
-  getUserInfo() {}
+  getUserInfo() {
+    return {
+      
+    }
+  }
 
   //Método para tomar los datos del nuevo usuario y agregarlos a la pág
-  setUserInfo(inputName, inputAbout, evt) {
-    evt.preventDefault();
-    if (inputName.value.length > 2 && inputAbout.value.length > 2) {
+  setUserInfo(inputName, inputAbout) {
       this._nameNode.textContent = inputName.value;
       this._aboutNode.textContent = inputAbout.value;
-      this.close();
     }
-    evt.target.reset();
   }
-}

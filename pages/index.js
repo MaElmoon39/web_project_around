@@ -13,16 +13,17 @@ import Card from "../components/Card.js";
 import UserInfo from "../components/UserInfo.js";
 import PopupWithForms from "../components/PopupWithForms.js";
 import PopupWithImage from "../components/PopupWithImage.js";
-import { closeHandler } from "../components/utils.js";
 
-const formElement = document.querySelector(".form_profile");
+
 const newImgForm = document.querySelector(".form_add-card");
 
 const formImgName = document.querySelector(".form__edit-field_image_name");
 const formImgLink = document.querySelector(".form__edit-field_image_link");
 
-const popupProfile = new PopupWithForms(".popup_profile");
-const popupCards = new PopupWithForms(".popup_add-image");
+const popupProfile = new PopupWithForms(".popup_profile", () => {});
+const popupCards = new PopupWithForms(".popup_add-image", () => {
+
+});
 const popupImage = new PopupWithImage(".popup_open-image");
 
 popupProfile.setEventListeners();
@@ -81,10 +82,10 @@ function handleProfileFormSubmit(evt) {
 
 //Esta sección es para que la información del popup de "editar perfil"
 //se actualice en la pantalla principal
-formElement.addEventListener("submit", () => {
-  const updatedProfile = new UserInfo({ defaultName, defaultAbout });
-  updatedProfile.setUserInfo(inputName, inputAbout);
-});
+// formElement.addEventListener("submit", () => {
+//   const updatedProfile = new UserInfo({ defaultName, defaultAbout });
+//   updatedProfile.setUserInfo(inputName, inputAbout);
+// });
 
 //Esta sección es para que la información del formulario de "nuevo lugar"
 //se incluya en la pantalla principal

@@ -1,8 +1,9 @@
 export default class Popup {
   constructor(popupSelector) {
     this._popupElement = document.querySelector(popupSelector);
+
     this._closeButton = this._popupElement.querySelector(
-      ".popup__edit-close-btn"
+      ".popup__close-button"
     );
     this._handleEscClose = this._handleEscClose.bind(this);
   }
@@ -28,7 +29,7 @@ export default class Popup {
 
   //Método para cerrar popup al dar click por fuera de la ventana modal: 1_definición
   closeHandler(evt) {
-    return evt.target.classList.contains("popup-container");
+    return evt.target.classList.contains("popup_opened");
   }
 
   //Esta parte selecciona los botones X para cerrar los popups

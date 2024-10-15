@@ -1,12 +1,9 @@
-const openImage = document.querySelector(".popup_open-image");
-import Popup from "./Popup.js";
 
 export default class Card {
-  constructor(cardName, cardLink, cardAlt, cardContainer, handleCardClick) {
+  constructor(cardName, cardLink, cardAlt, handleCardClick) {
     this._cardName = cardName;
     this._cardAlt = cardAlt;
     this._cardLink = cardLink;
-    this._cardContainer = cardContainer;
     this.handleCardClick = handleCardClick;
   }
 
@@ -61,17 +58,7 @@ export default class Card {
 
     //Esta sección permite visualizar la imagen más grande, una vez se da click en una card
     this._cardImgElement.addEventListener("click", () => {
-      openImage.classList.add("popup_opened", "popup-container-bg");
-      openImage.querySelector(".popup__big-img").src = this._cardLink;
-      openImage.querySelector(".popup__big-img").alt =
-        "Imagen de: " + this._cardName;
-      openImage.querySelector(".popup__big-img-name").textContent =
-        this._cardName;
-      openImage.handleCardClick(this._cardName, this._cardLink);
-
-      const popupContainer = document.querySelector(".popup-container");
-      popupContainer.classList.add("popup-container-bg");
-      document.addEventListener("keydown", keyHandler);
+    this.handleCardClick(this._cardName, this._cardLink)
     });
   }
 }

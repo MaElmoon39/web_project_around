@@ -1,18 +1,20 @@
 import Popup from "./Popup.js";
 
 export default class PopupWithForms extends Popup {
-  constructor(popupSelector) {
+  constructor(popupSelector, handleFormSubmit) {
     super(popupSelector);
-    this._imageElement = this._popupElement.querySelector(".popup__big-img");
+    this._formElement = this._popupElement.querySelector(".popup__form");
+    this.handleFormSubmit = handleFormSubmit;
   }
 
-  open(name, link) {
-    super.open();
-    this._imageElement.textContent = name;
-    this._imageElement.src = link;
-  }
 
   setEventListeners() {
     super.setEventListeners();
+    this._formElement.addEventListener("submit", (evt) => {
+      console.log('Ejecuto el evento')
+      evt.preventDefault();
+      this.handleFormSubmit()
+      this.close();
+    })
   }
 }
