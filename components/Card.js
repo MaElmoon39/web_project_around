@@ -1,4 +1,3 @@
-
 export default class Card {
   constructor(cardName, cardLink, cardAlt, handleCardClick) {
     this._cardName = cardName;
@@ -58,7 +57,7 @@ export default class Card {
 
     //Esta sección permite visualizar la imagen más grande, una vez se da click en una card
     this._cardImgElement.addEventListener("click", () => {
-    this.handleCardClick(this._cardName, this._cardLink)
+      this.handleCardClick();
     });
   }
 }

@@ -6,7 +6,10 @@ export default class UserInfo {
 
   //Método que devuelve un objeto con información sobre el usuario:
   getUserInfo() {
-    return {};
+    return {
+      name: this._nameNode.textContent,
+      about: this._aboutNode.textContent,
+    };
   }
 
   //Método para tomar los datos del nuevo usuario y agregarlos a la pág

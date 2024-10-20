@@ -15,12 +15,19 @@ import PopupWithForms from "../components/PopupWithForms.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 
 const newImgForm = document.querySelector(".form_add-card");
+export const formImgName = document.querySelector(
+  ".form__edit-field_image_name"
+);
+export const formImgLink = document.querySelector(
+  ".form__edit-field_image_link"
+);
 
-const formImgName = document.querySelector(".form__edit-field_image_name");
-const formImgLink = document.querySelector(".form__edit-field_image_link");
-
+//Actualizar el popup "editar perfil"
 const popupProfile = new PopupWithForms(".popup_profile", () => {});
+
+//Añadir nueva card desde el popup
 const popupCards = new PopupWithForms(".popup_add-image", () => {});
+
 const popupImage = new PopupWithImage(".popup_open-image");
 
 popupProfile.setEventListeners();
@@ -86,7 +93,7 @@ function handleProfileFormSubmit(evt) {
 
 //Esta sección es para que la información del formulario de "nuevo lugar"
 //se incluya en la pantalla principal
-newImgForm.addEventListener("submit", addNewCard);
+//newImgForm.addEventListener("submit", addNewCard);
 
 // document.querySelector(".popup-container").addEventListener("click", () => {
 //   document.closeHandler();
