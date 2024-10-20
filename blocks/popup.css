@@ -1,5 +1,4 @@
-
-.popup{
+.popup {
   background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
@@ -13,7 +12,7 @@
 
 .popup_opened {
   display: flex;
-  }
+}
 
 .popup__form {
   max-width: 430px;
@@ -52,8 +51,9 @@
   position: relative;
   max-width: 75vw;
 }
-.popup__big-img{
-  max-width: 500px;
+.popup__big-img {
+  max-width: 75vw;
+  max-height: 75vh;
 }
 
 .form__edit-field {

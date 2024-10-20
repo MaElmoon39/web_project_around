@@ -50,87 +50,83 @@
         <div class="popup popup_profile">
           <form class="popup__form form" novalidate>
             <h3 class="popup__title">Editar perfil</h3>
-              <img
-                src="images/CloseIcon.svg"
-                alt="Close popup icon"
-                class="popup__close-button"
-              />
-                <input
-                  class="form__edit-field form__edit-field_profile_name"
-                  type="text"
-                  id="name-input"
-                  name="name-input"
-                  placeholder="Nombre"
-                  required
-                  minlength="2"
-                  maxlength="40"
-                  value="Jacques Cousteau"
-                />
-                <span class="form__input-error name-input-error"></span>
-                <input
-                  class="form__edit-field form__edit-field_about"
-                  type="text"
-                  id="about-input"
-                  name="about-input"
-                  placeholder="Acerca de mí"
-                  required
-                  minlength="2"
-                  maxlength="200"
-                  value="Explorer"
-                />
-                <span class="form__input-error about-input-error"></span>
-                <button class="form__edit-subm-btn" type="submit">
-                  Guardar
-                </button>
-          </form>
-        </div>
-        <div class="popup popup_add-image">
-          <form class="popup__form form" novalidate>
-            <h3 class="popup__title">Editar perfil</h3>
             <img
               src="images/CloseIcon.svg"
               alt="Close popup icon"
               class="popup__close-button"
             />
             <input
-                  class="form__edit-field form__edit-field_image_name"
-                  type="text"
-                  id="title-input"
-                  name="title-input"
-                  placeholder="Título"
-                  required
-                  minlength="2"
-                  maxlength="30"
-                />
-                <span class="form__input-error title-input-error"></span>
+              class="form__edit-field form__edit-field_profile_name"
+              type="text"
+              id="name-input"
+              name="name-input"
+              placeholder="Nombre"
+              required
+              minlength="2"
+              maxlength="40"
+              value="Jacques Cousteau"
+            />
+            <span class="form__input-error name-input-error"></span>
+            <input
+              class="form__edit-field form__edit-field_about"
+              type="text"
+              id="about-input"
+              name="about-input"
+              placeholder="Acerca de mí"
+              required
+              minlength="2"
+              maxlength="200"
+              value="Explorer"
+            />
+            <span class="form__input-error about-input-error"></span>
+            <button class="form__edit-subm-btn" type="submit">Guardar</button>
+          </form>
+        </div>
+        <div class="popup popup_add-image">
+          <form class="popup__form form" novalidate>
+            <h3 class="popup__title">Nuevo lugar</h3>
+            <img
+              src="images/CloseIcon.svg"
+              alt="Close popup icon"
+              class="popup__close-button"
+            />
+            <input
+              class="form__edit-field form__edit-field_image_name"
+              type="text"
+              id="title-input"
+              name="title-input"
+              placeholder="Título"
+              required
+              minlength="2"
+              maxlength="30"
+            />
+            <span class="form__input-error title-input-error"></span>
 
-                <input
-                  class="form__edit-field form__edit-field_image_link"
-                  type="url"
-                  id="link-img-input"
-                  name="link-img-input"
-                  placeholder="Enlace a la imagen"
-                  required
-                />
-                <span class="form__input-error link-img-input-error"></span>
+            <input
+              class="form__edit-field form__edit-field_image_link"
+              type="url"
+              id="link-img-input"
+              name="link-img-input"
+              placeholder="Enlace a la imagen"
+              required
+            />
+            <span class="form__input-error link-img-input-error"></span>
 
-                <button class="form__edit-subm-btn" type="submit">
-                  Crear
-                </button>
+            <button class="form__edit-subm-btn" type="submit">Crear</button>
           </form>
         </div>
 
-      <div class="popup popup_open-image">
-        <div class="popup__img-container">
-          <img class="popup__big-img" src="#" alt="" />
+        <div class="popup popup_open-image">
+          <div class="popup__img-container">
+            <img class="popup__big-img" src="#" alt="" />
             <p class="popup__big-img-name"></p>
-               <img
-                  src="images/CloseIcon.svg"
-                  alt="Close popup icon"
-                  class="popup__close-button"
-                />
+            <img
+              src="images/CloseIcon.svg"
+              alt="Close popup icon"
+              class="popup__close-button"
+            />
+          </div>
         </div>
-      </div>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2024. María Tortello</p>

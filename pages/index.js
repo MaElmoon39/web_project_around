@@ -14,16 +14,13 @@ import UserInfo from "../components/UserInfo.js";
 import PopupWithForms from "../components/PopupWithForms.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 
-
 const newImgForm = document.querySelector(".form_add-card");
 
 const formImgName = document.querySelector(".form__edit-field_image_name");
 const formImgLink = document.querySelector(".form__edit-field_image_link");
 
 const popupProfile = new PopupWithForms(".popup_profile", () => {});
-const popupCards = new PopupWithForms(".popup_add-image", () => {
-
-});
+const popupCards = new PopupWithForms(".popup_add-image", () => {});
 const popupImage = new PopupWithImage(".popup_open-image");
 
 popupProfile.setEventListeners();

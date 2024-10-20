@@ -93,23 +93,17 @@
   }
 
   .popup {
-    max-width: 282px;
-    max-height: 322px;
-  }
-
-  .popup__edit {
     padding: 25px 16px 0px 22px;
   }
 
-  .popup__edit-title {
+  .popup__title {
     font-size: 18px;
     line-height: 22px;
     padding-bottom: 74px;
   }
 
-  .popup__edit-close-btn {
-    position: fixed;
-    top: -12%;
+  .popup__close-button {
+    top: -15%;
     right: 3%;
   }
 
