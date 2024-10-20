@@ -6,6 +6,8 @@ import {
   defaultAbout,
   inputName,
   inputAbout,
+  formImgName,
+  formImgLink,
   editProfileBtn,
 } from "../components/constants.js";
 import { initialCards, formConfig } from "../components/constants.js";
@@ -14,21 +16,37 @@ import UserInfo from "../components/UserInfo.js";
 import PopupWithForms from "../components/PopupWithForms.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 
-const newImgForm = document.querySelector(".form_add-card");
-export const formImgName = document.querySelector(
-  ".form__edit-field_image_name"
-);
-export const formImgLink = document.querySelector(
-  ".form__edit-field_image_link"
-);
+initialCards.forEach((data) => {
+  const cardNode = new Card(data.name, data.link, data.alt, () => {
+    popupImage.open(data.name, data.link);
+  });
+  const cardElement = cardNode.generateCard();
+  cardsContainer.append(cardElement);
+});
 
 //Actualizar el popup "editar perfil"
-const popupProfile = new PopupWithForms(".popup_profile", () => {});
+const popupProfile = new PopupWithForms(".popup_profile", () => {
+  if (inputName.value.length > 2 && inputAbout.value.length > 2) {
+    nameNode.textContent = inputName.value;
+    aboutNode.textContent = inputAbout.value;
+    popupProfile.close();
+  }
+});
 
 //Añadir nueva card desde el popup
-const popupCards = new PopupWithForms(".popup_add-image", () => {});
+const popupCards = new PopupWithForms(".popup_add-image", () => {
+  const cardNode = new Card(formImgName.value, formImgLink.value, () => {
+    popupImage.open(formImgName.value, formImgLink.value);
+  });
+  const cardElement = cardNode.generateCard();
 
-const popupImage = new PopupWithImage(".popup_open-image");
+  if (formImgName.value !== "" && formImgLink.value !== "") {
+    cardsContainer.prepend(cardElement);
+    popupImage.close();
+  }
+});
+
+export const popupImage = new PopupWithImage(".popup_open-image");
 
 popupProfile.setEventListeners();
 popupCards.setEventListeners();
@@ -41,30 +59,6 @@ editProfileBtn.addEventListener("click", () => {
 addImgBtn.addEventListener("click", () => {
   popupCards.open();
 });
-
-initialCards.forEach((data) => {
-  const cardNode = new Card(data.name, data.link, data.alt, () => {
-    popupImage.open(data.name, data.link);
-  });
-  const cardElement = cardNode.generateCard();
-  cardsContainer.append(cardElement);
-});
-
-//Función para añadir nueva card desde el popup
-function addNewCard(evt) {
-  evt.preventDefault();
-  const cardNode = new Card(formImgName.value, formImgLink.value, () => {
-    popupImage.open(formImgName.value, formImgLink.value);
-  });
-  const cardElement = cardNode.generateCard();
-
-  if (formImgName.value !== "" && formImgLink.value !== "") {
-    cardsContainer.prepend(cardElement);
-    popupImage.close();
-  }
-
-  evt.target.reset();
-}
 
 //Función para editar el popup "editar perfil"
 function handleProfileFormSubmit(evt) {
