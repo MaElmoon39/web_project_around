@@ -57,7 +57,7 @@ export default class Card {
 
     //Esta sección permite visualizar la imagen más grande, una vez se da click en una card
     this._cardImgElement.addEventListener("click", () => {
-      this.handleCardClick();
+      this.handleCardClick(this._cardName, this._cardLink);
     });
   }
 }

@@ -27,17 +27,23 @@ initialCards.forEach((data) => {
 //Actualizar el popup "editar perfil"
 const popupProfile = new PopupWithForms(".popup_profile", () => {
   if (inputName.value.length > 2 && inputAbout.value.length > 2) {
-    nameNode.textContent = inputName.value;
-    aboutNode.textContent = inputAbout.value;
+    defaultName.textContent = inputName.value;
+    defaultAbout.textContent = inputAbout.value;
     popupProfile.close();
   }
 });
 
 //Añadir nueva card desde el popup
 const popupCards = new PopupWithForms(".popup_add-image", () => {
-  const cardNode = new Card(formImgName.value, formImgLink.value, () => {
-    popupImage.open(formImgName.value, formImgLink.value);
-  });
+  const cardNode = new Card(
+    formImgName.value,
+    formImgLink.value,
+    formImgName.value,
+    (name, link) => {
+      console.log(formImgName.value);
+      popupImage.open(name, link);
+    }
+  );
   const cardElement = cardNode.generateCard();
 
   if (formImgName.value !== "" && formImgLink.value !== "") {
@@ -59,22 +65,6 @@ editProfileBtn.addEventListener("click", () => {
 addImgBtn.addEventListener("click", () => {
   popupCards.open();
 });
-
-//Función para editar el popup "editar perfil"
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-  const nameNode = document.querySelector(".profile__info-name");
-  const aboutNode = document.querySelector(".profile__info-about");
-  const inputName = document.querySelector(".form__edit-field_profile_name");
-  const inputAbout = document.querySelector(".form__edit-field_about");
-
-  if (inputName.value.length > 2 && inputAbout.value.length > 2) {
-    nameNode.textContent = inputName.value;
-    aboutNode.textContent = inputAbout.value;
-    closeAllPopups();
-  }
-  evt.target.reset();
-}
 
 //Sección de llamado de funciones
 
