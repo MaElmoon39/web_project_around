@@ -9,7 +9,10 @@ const presets = [
         chrome: "64",
         safari: "11.1",
       },
+<<<<<<< HEAD
 
+=======
+>>>>>>> ft/refactor2
       useBuiltIns: "entry",
       corejs: "^3",
     },
