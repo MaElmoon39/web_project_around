@@ -2,14 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-<<<<<<< HEAD
-<<<<<<< HEAD
 const { query } = require("express");
-=======
->>>>>>> ft/refactor2
-=======
->>>>>>> ft/refactor2
-
 module.exports = {
   devtool: "inline-source-map",
   entry: {
