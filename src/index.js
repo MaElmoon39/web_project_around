@@ -66,23 +66,6 @@ addImgBtn.addEventListener("click", () => {
   popupCards.open();
 });
 
-//Sección de llamado de funciones
-
-//Esta sección es para que la información del popup de "editar perfil"
-//se actualice en la pantalla principal
-// formElement.addEventListener("submit", () => {
-//   const updatedProfile = new UserInfo({ defaultName, defaultAbout });
-//   updatedProfile.setUserInfo(inputName, inputAbout);
-// });
-
-//Esta sección es para que la información del formulario de "nuevo lugar"
-//se incluya en la pantalla principal
-//newImgForm.addEventListener("submit", addNewCard);
-
-// document.querySelector(".popup-container").addEventListener("click", () => {
-//   document.closeHandler();
-// });
-
 const initialValidation = new FormValidator(formConfig);
 
 const formProfileValidated = initialValidation.enableValidation(formConfig);
