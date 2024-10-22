@@ -10,7 +10,10 @@ const presets = [
         safari: "11.1",
       },
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> ft/refactor2
 =======
 >>>>>>> ft/refactor2
       useBuiltIns: "entry",

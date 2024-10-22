@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 <<<<<<< HEAD
+<<<<<<< HEAD
 const { query } = require("express");
+=======
+>>>>>>> ft/refactor2
 =======
 >>>>>>> ft/refactor2
 
