@@ -22,7 +22,9 @@ export default class PopupWithForms extends Popup {
 
   close() {
     super.close();
-    this._formElement.reset();
+    if (this._popupElement == document.querySelector(".popup_add-image")) {
+      this._formElement.reset();
+    }
   }
 
   setEventListeners() {

@@ -39,7 +39,6 @@ const popupCards = new PopupWithForms(".popup_add-image", () => {
     formImgLink.value,
     formImgName.value,
     (name, link) => {
-      console.log(formImgName.value);
       popupImage.open(name, link);
     }
   );
