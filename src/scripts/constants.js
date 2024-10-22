@@ -1,37 +1,37 @@
 export const initialCards = [
   {
     name: "Chinatown",
-    link: "images/Chinatown_ManhattanUSA.jpg",
+    link: "../imagesChinatown_ManhattanUSA.jpg",
     alt: "Chinatown Manhattan USA",
   },
 
   {
     name: "Ghostbusters Headquarters",
-    link: "images/GhostbustersHeadquarters_NY_USA.jpg",
+    link: "../imagesGhostbustersHeadquarters_NY_USA.jpg",
     alt: "Ghostbusters Headquarters USA",
   },
 
   {
     name: "Guatapé",
-    link: "images/Guatape_AntioquiaCOL.jpg",
+    link: "../imagesGuatape_AntioquiaCOL.jpg",
     alt: "Guatape Antioquia Colombia",
   },
 
   {
     name: "Hong Kong",
-    link: "images/HongKong_Streetnight.jpg",
+    link: "../imagesHongKong_Streetnight.jpg",
     alt: "Streetnight HongKong",
   },
 
   {
     name: "Mochila Wayú",
-    link: "images/MochilaWayu_CartagenaCOL.jpg",
+    link: "../imagesMochilaWayu_CartagenaCOL.jpg",
     alt: "MochilaWayu Cartagena Colombia",
   },
 
   {
     name: "Suculentas",
-    link: "images/suculentas.jpg",
+    link: "../imagessuculentas.jpg",
     alt: "Plantas de Suculentas Colombia",
   },
 ];

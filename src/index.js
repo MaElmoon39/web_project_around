@@ -1,4 +1,5 @@
-import FormValidator from "../components/FormValidator.js";
+import "./styles/index.css";
+import FormValidator from "./scripts/FormValidator.js";
 import {
   addImgBtn,
   cardsContainer,
@@ -9,12 +10,12 @@ import {
   formImgName,
   formImgLink,
   editProfileBtn,
-} from "../components/constants.js";
-import { initialCards, formConfig } from "../components/constants.js";
-import Card from "../components/Card.js";
-import UserInfo from "../components/UserInfo.js";
-import PopupWithForms from "../components/PopupWithForms.js";
-import PopupWithImage from "../components/PopupWithImage.js";
+} from "./scripts/constants.js";
+import { initialCards, formConfig } from "./scripts/constants.js";
+import Card from "./scripts/Card.js";
+import UserInfo from "./scripts/UserInfo.js";
+import PopupWithForms from "./scripts/PopupWithForms.js";
+import PopupWithImage from "./scripts/PopupWithImage.js";
 
 initialCards.forEach((data) => {
   const cardNode = new Card(data.name, data.link, data.alt, () => {
@@ -24,7 +25,6 @@ initialCards.forEach((data) => {
   cardsContainer.append(cardElement);
 });
 
-//Actualizar el popup "editar perfil"
 const popupProfile = new PopupWithForms(".popup_profile", () => {
   if (inputName.value.length > 2 && inputAbout.value.length > 2) {
     defaultName.textContent = inputName.value;
@@ -33,7 +33,6 @@ const popupProfile = new PopupWithForms(".popup_profile", () => {
   }
 });
 
-//Añadir nueva card desde el popup
 const popupCards = new PopupWithForms(".popup_add-image", () => {
   const cardNode = new Card(
     formImgName.value,
@@ -65,23 +64,6 @@ editProfileBtn.addEventListener("click", () => {
 addImgBtn.addEventListener("click", () => {
   popupCards.open();
 });
-
-//Sección de llamado de funciones
-
-//Esta sección es para que la información del popup de "editar perfil"
-//se actualice en la pantalla principal
-// formElement.addEventListener("submit", () => {
-//   const updatedProfile = new UserInfo({ defaultName, defaultAbout });
-//   updatedProfile.setUserInfo(inputName, inputAbout);
-// });
-
-//Esta sección es para que la información del formulario de "nuevo lugar"
-//se incluya en la pantalla principal
-//newImgForm.addEventListener("submit", addNewCard);
-
-// document.querySelector(".popup-container").addEventListener("click", () => {
-//   document.closeHandler();
-// });
 
 const initialValidation = new FormValidator(formConfig);
 
