@@ -1,37 +1,44 @@
+import chinaImage from "../images/Chinatown_ManhattanUSA.jpg";
+import ghostImage from "../images/GhostbustersHeadquarters_NY_USA.jpg";
+import guatapeImage from "../images/Guatape_AntioquiaCOL.jpg";
+import honkongImage from "../images/HongKong_Streetnight.jpg";
+import wayuuImage from "../images/MochilaWayu_CartagenaCOL.jpg";
+import suculentasImage from "../images/suculentas.jpg";
+
 export const initialCards = [
   {
     name: "Chinatown",
-    link: "images/Chinatown_ManhattanUSA.jpg",
+    link: chinaImage,
     alt: "Chinatown Manhattan USA",
   },
 
   {
     name: "Ghostbusters Headquarters",
-    link: "images/GhostbustersHeadquarters_NY_USA.jpg",
+    link: ghostImage,
     alt: "Ghostbusters Headquarters USA",
   },
 
   {
     name: "Guatapé",
-    link: "images/Guatape_AntioquiaCOL.jpg",
+    link: guatapeImage,
     alt: "Guatape Antioquia Colombia",
   },
 
   {
     name: "Hong Kong",
-    link: "images/HongKong_Streetnight.jpg",
+    link: honkongImage,
     alt: "Streetnight HongKong",
   },
 
   {
     name: "Mochila Wayú",
-    link: "images/MochilaWayu_CartagenaCOL.jpg",
+    link: wayuuImage,
     alt: "MochilaWayu Cartagena Colombia",
   },
 
   {
     name: "Suculentas",
-    link: "images/suculentas.jpg",
+    link: suculentasImage,
     alt: "Plantas de Suculentas Colombia",
   },
 ];

@@ -1,4 +1,4 @@
-import FormValidator from "../components/FormValidator.js";
+import FormValidator from "./components/FormValidator.js";
 import {
   addImgBtn,
   cardsContainer,
@@ -9,12 +9,12 @@ import {
   formImgName,
   formImgLink,
   editProfileBtn,
-} from "../components/constants.js";
-import { initialCards, formConfig } from "../components/constants.js";
-import Card from "../components/Card.js";
-import UserInfo from "../components/UserInfo.js";
-import PopupWithForms from "../components/PopupWithForms.js";
-import PopupWithImage from "../components/PopupWithImage.js";
+} from "./components/constants.js";
+import { initialCards, formConfig } from "./components/constants.js";
+import Card from "./components/Card.js";
+import UserInfo from "./components/UserInfo.js";
+import PopupWithForms from "./components/PopupWithForms.js";
+import PopupWithImage from "./components/PopupWithImage.js";
 
 initialCards.forEach((data) => {
   const cardNode = new Card(data.name, data.link, data.alt, () => {
