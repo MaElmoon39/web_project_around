@@ -1,4 +1,3 @@
-import { target } from "../../webpack.config.js";
 import Popup from "./Popup.js";
 
 export default class PopupWithForms extends Popup {

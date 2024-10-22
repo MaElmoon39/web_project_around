@@ -25,6 +25,7 @@ initialCards.forEach((data) => {
   cardsContainer.append(cardElement);
 });
 
+//Actualizar el popup "editar perfil"
 const popupProfile = new PopupWithForms(".popup_profile", () => {
   if (inputName.value.length > 2 && inputAbout.value.length > 2) {
     defaultName.textContent = inputName.value;
@@ -33,6 +34,7 @@ const popupProfile = new PopupWithForms(".popup_profile", () => {
   }
 });
 
+//Añadir nueva card desde el popup
 const popupCards = new PopupWithForms(".popup_add-image", () => {
   const cardNode = new Card(
     formImgName.value,
