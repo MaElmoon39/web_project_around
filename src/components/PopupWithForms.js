@@ -1,3 +1,4 @@
+import { target } from "../../webpack.config.js";
 import Popup from "./Popup.js";
 
 export default class PopupWithForms extends Popup {
@@ -19,17 +20,13 @@ export default class PopupWithForms extends Popup {
     return inputValues;
   }
 
-  close() {
-    super.close();
-    this._formElement.reset();
-  }
-
   setEventListeners() {
     super.setEventListeners();
     this._formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
       this.handleFormSubmit(this._getInputValues);
       this.close();
+      evt.target.reset();
     });
   }
 }
