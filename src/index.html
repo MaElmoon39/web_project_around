@@ -23,7 +23,7 @@
       <main class="content">
         <section class="profile">
           <img
-            src="images/profilePhoto.png"
+            src="<%= require('./images/profilePhoto.png')%>"
             alt="Profile photo"
             class="profile__photo"
           />
@@ -36,7 +36,7 @@
             <button class="profile__info-edit">
               <img
                 class="profile__info-edit-pencil"
-                src="images/pencilEditButton.svg"
+                src="<%= require('./images/pencilEditButton.svg')%>"
                 alt="Pencil Edit Button"
               />
             </button>
@@ -49,7 +49,7 @@
           <form class="popup__form form" novalidate>
             <h3 class="popup__title">Editar perfil</h3>
             <img
-              src="images/CloseIcon.svg"
+              src="<%= require('./images/CloseIcon.svg')%>"
               alt="Close popup icon"
               class="popup__close-button"
             />
@@ -84,7 +84,7 @@
           <form class="popup__form form" novalidate>
             <h3 class="popup__title">Nuevo lugar</h3>
             <img
-              src="images/CloseIcon.svg"
+              src="<%= require('./images/CloseIcon.svg')%>"
               alt="Close popup icon"
               class="popup__close-button"
             />
@@ -119,7 +119,7 @@
             <img class="popup__big-img" src="#" alt="" />
             <p class="popup__big-img-name"></p>
             <img
-              src="images/CloseIcon.svg"
+              src="<%= require('./images/CloseIcon.svg')%>"
               alt="Close popup icon"
               class="popup__close-button"
             />

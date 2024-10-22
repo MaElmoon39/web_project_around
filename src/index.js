@@ -1,3 +1,4 @@
+import "./styles/index.css";
 import FormValidator from "./components/FormValidator.js";
 import {
   addImgBtn,
