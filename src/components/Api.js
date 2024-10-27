@@ -1,3 +1,5 @@
+import stringify from "fast-json-stable-stringify";
+
 export default class Api {
   constructor(baseUrl, headers) {
     this.baseUrl = baseUrl;
@@ -20,7 +22,7 @@ export default class Api {
       });
   }
 
-  /* getInitialCards() {
+  getInitialCards() {
     return fetch(`${this.baseUrl}/cards`, {
       method: "GET",
       headers: this.headers,
@@ -34,5 +36,25 @@ export default class Api {
       .catch((err) => {
         console.log(err);
       });
-  } */
+  }
+
+  editUser(name, about) {
+    return fetch(`${this.baseUrl}/users/me`, {
+      method: "PATCH",
+      headers: this.headers,
+      body: JSON.stringify({
+        name,
+        about,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(`Error: ${res.status}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 }

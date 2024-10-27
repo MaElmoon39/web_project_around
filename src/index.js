@@ -17,6 +17,7 @@ import UserInfo from "./components/UserInfo.js";
 import Api from "./components/Api.js";
 import PopupWithForms from "./components/PopupWithForms.js";
 import PopupWithImage from "./components/PopupWithImage.js";
+import Section from "./components/Section.js";
 
 const user = new UserInfo(
   ".profile__info-name",
@@ -30,9 +31,29 @@ const api = new Api("https://around.nomoreparties.co/v1/web-es-cohort-16", {
 });
 
 api.getUser().then((data) => {
-  console.log(data);
   user.setUserInfo(data.name, data.about, data.avatar);
 });
+
+/*api.getInitialCards().then((data) => {
+  console.log(data);
+});
+
+const cardSection = new Section(
+  {
+    data: initialCards,
+    renderer: (item) => {
+      const cardNode = new Card(item.name, item.link, item.alt, () => {
+        popupImage.open(item.name, item.link);
+      });
+
+      const cardElement = cardNode.generateCard();
+      //cardSection.addItem(cardElement);
+    },
+  },
+  cardsContainer
+);
+
+cardSection.renderItems();*/
 
 initialCards.forEach((data) => {
   const cardNode = new Card(data.name, data.link, data.alt, () => {
@@ -45,8 +66,9 @@ initialCards.forEach((data) => {
 //Actualizar el popup "editar perfil"
 const popupProfile = new PopupWithForms(".popup_profile", () => {
   if (inputName.value.length > 2 && inputAbout.value.length > 2) {
-    defaultName.textContent = inputName.value;
-    defaultAbout.textContent = inputAbout.value;
+    api.editUser(inputName.value, inputAbout.value).then((data) => {
+      user.setUserInfo(data.name, data.about, data.avatar);
+    });
     popupProfile.close();
   }
 });

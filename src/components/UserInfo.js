@@ -1,5 +1,5 @@
 export default class UserInfo {
-  constructor({ nameNode, aboutNode, avatarNode }) {
+  constructor(nameNode, aboutNode, avatarNode) {
     this._nameNode = document.querySelector(nameNode);
     this._aboutNode = document.querySelector(aboutNode);
     this._avatarNode = document.querySelector(avatarNode);
@@ -17,6 +17,6 @@ export default class UserInfo {
   setUserInfo(inputName, inputAbout, userAvatar) {
     this._nameNode.textContent = inputName;
     this._aboutNode.textContent = inputAbout;
-    this._avatar.src = userAvatar;
+    this._avatarNode.src = userAvatar;
   }
 }
