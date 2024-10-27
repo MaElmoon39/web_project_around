@@ -47,6 +47,7 @@ export const cardsContainer = document.querySelector(".elements");
 export const addImgBtn = document.querySelector(".profile__add-img");
 export const defaultName = document.querySelector(".profile__info-name");
 export const defaultAbout = document.querySelector(".profile__info-about");
+export const avatar = document.querySelector(".profile__photo");
 export const editProfileBtn = document.querySelector(".profile__info-edit");
 export const inputName = document.querySelector(
   ".form__edit-field_profile_name"

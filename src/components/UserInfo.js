@@ -1,7 +1,8 @@
 export default class UserInfo {
-  constructor({ nameNode, aboutNode }) {
-    this._nameNode = nameNode;
-    this._aboutNode = aboutNode;
+  constructor({ nameNode, aboutNode, avatarNode }) {
+    this._nameNode = document.querySelector(nameNode);
+    this._aboutNode = document.querySelector(aboutNode);
+    this._avatarNode = document.querySelector(avatarNode);
   }
 
   //Método que devuelve un objeto con información sobre el usuario:
@@ -13,8 +14,9 @@ export default class UserInfo {
   }
 
   //Método para tomar los datos del nuevo usuario y agregarlos a la pág
-  setUserInfo(inputName, inputAbout) {
-    this._nameNode.textContent = inputName.value;
-    this._aboutNode.textContent = inputAbout.value;
+  setUserInfo(inputName, inputAbout, userAvatar) {
+    this._nameNode.textContent = inputName;
+    this._aboutNode.textContent = inputAbout;
+    this._avatar.src = userAvatar;
   }
 }
