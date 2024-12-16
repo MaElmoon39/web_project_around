@@ -1,5 +1,3 @@
-import stringify from "fast-json-stable-stringify";
-
 export default class Api {
   constructor(baseUrl, headers) {
     this.baseUrl = baseUrl;
@@ -45,6 +43,26 @@ export default class Api {
       body: JSON.stringify({
         name,
         about,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(`Error: ${res.status}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  createCard(name, link) {
+    return fetch(`${this.baseUrl}/cards`, {
+      method: "POST",
+      headers: this.headers,
+      body: JSON.stringify({
+        name,
+        link,
       }),
     })
       .then((res) => {

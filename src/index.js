@@ -34,29 +34,35 @@ api.getUser().then((data) => {
   user.setUserInfo(data.name, data.about, data.avatar);
 });
 
-/*api.getInitialCards().then((data) => {
-  console.log(data);
+/*
+api.getInitialCards().then((data) => {
+  const cardNode = new Card(data.name, data.link, data.alt, (name, link) => {
+    popupImage.open(name, link);
+  });
+  const cardElement = cardNode.generateCard();
+  cardsContainer.append(cardElement);
 });
 
 const cardSection = new Section(
   {
     data: initialCards,
     renderer: (item) => {
-      const cardNode = new Card(item.name, item.link, item.alt, () => {
+      const cardNode = new Card(item, () => {
         popupImage.open(item.name, item.link);
       });
 
       const cardElement = cardNode.generateCard();
-      //cardSection.addItem(cardElement);
+      //cardsContainer.append(cardElement);
+      cardsContainer.addItem(cardElement);
     },
   },
   cardsContainer
 );
 
-cardSection.renderItems();*/
+console.log(cardSection);*/
 
 initialCards.forEach((data) => {
-  const cardNode = new Card(data.name, data.link, data.alt, () => {
+  const cardNode = new Card(data, () => {
     popupImage.open(data.name, data.link);
   });
   const cardElement = cardNode.generateCard();
@@ -75,20 +81,18 @@ const popupProfile = new PopupWithForms(".popup_profile", () => {
 
 //Añadir nueva card desde el popup
 const popupCards = new PopupWithForms(".popup_add-image", () => {
-  const cardNode = new Card(
-    formImgName.value,
-    formImgLink.value,
-    formImgName.value,
-    (name, link) => {
-      popupImage.open(name, link);
-    }
-  );
-  const cardElement = cardNode.generateCard();
+  api.createCard(formImgName.value, formImgLink.value).then((data) => {
+    console.log(data);
+    const cardNode = new Card(data.name, data.link, data.name, () => {
+      popupImage.open(data.name, data.link);
+    });
+    const cardElement = cardNode.generateCard();
 
-  if (formImgName.value !== "" && formImgLink.value !== "") {
-    cardsContainer.prepend(cardElement);
-    popupImage.close();
-  }
+    if (formImgName.value !== "" && formImgLink.value !== "") {
+      cardsContainer.prepend(cardElement);
+      popupImage.close();
+    }
+  });
 });
 
 export const popupImage = new PopupWithImage(".popup_open-image");
@@ -108,3 +112,5 @@ addImgBtn.addEventListener("click", () => {
 const initialValidation = new FormValidator(formConfig);
 
 const formProfileValidated = initialValidation.enableValidation(formConfig);
+
+//cardSection.renderItems();
