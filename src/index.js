@@ -34,39 +34,24 @@ api.getUser().then((data) => {
   user.setUserInfo(data.name, data.about, data.avatar);
 });
 
-/*
 api.getInitialCards().then((data) => {
-  const cardNode = new Card(data.name, data.link, data.alt, (name, link) => {
-    popupImage.open(name, link);
-  });
-  const cardElement = cardNode.generateCard();
-  cardsContainer.append(cardElement);
-});
+  const cardSection = new Section(
+    {
+      items: data,
+      renderer: (item) => {
+        const cardNode = new Card(item, () => {
+          popupImage.open(item.name, item.link);
+        });
 
-const cardSection = new Section(
-  {
-    data: initialCards,
-    renderer: (item) => {
-      const cardNode = new Card(item, () => {
-        popupImage.open(item.name, item.link);
-      });
-
-      const cardElement = cardNode.generateCard();
-      //cardsContainer.append(cardElement);
-      cardsContainer.addItem(cardElement);
+        const cardElement = cardNode.generateCard();
+        //cardsContainer.append(cardElement);
+        cardSection.addItem(cardElement);
+      },
     },
-  },
-  cardsContainer
-);
+    cardsContainer
+  );
 
-console.log(cardSection);*/
-
-initialCards.forEach((data) => {
-  const cardNode = new Card(data, () => {
-    popupImage.open(data.name, data.link);
-  });
-  const cardElement = cardNode.generateCard();
-  cardsContainer.append(cardElement);
+  cardSection.renderItems();
 });
 
 //Actualizar el popup "editar perfil"
@@ -112,5 +97,3 @@ addImgBtn.addEventListener("click", () => {
 const initialValidation = new FormValidator(formConfig);
 
 const formProfileValidated = initialValidation.enableValidation(formConfig);
-
-//cardSection.renderItems();
