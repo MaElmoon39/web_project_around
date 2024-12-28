@@ -40,7 +40,9 @@
 
           <button class="profile__add-img"></button>
         </section>
+
         <section class="elements"></section>
+
         <div class="popup popup_profile">
           <form class="popup__form form" novalidate>
             <h3 class="popup__title">Editar perfil</h3>
@@ -121,6 +123,16 @@
             />
           </div>
         </div>
+
+        <!-- <div class="popup popup_delete-validation">
+          <h3 class="popup__title">¿Estás seguro/a?</h3>
+          <img
+            src="<%= require('./images/CloseIcon.svg')%>"
+            alt="Close popup icon"
+            class="popup__close-button"
+          />
+          <button class="form__edit-subm-btn" type="submit">Sí</button>
+        </div> -->
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2024. María Tortello</p>
@@ -133,10 +145,10 @@
         <div class="elements__picture-name-section">
           <h3 class="elements__picture-name"></h3>
           <button class="elements__like-btn"></button>
+          <!-- <p class="elements__likes-number">6</p> -->
         </div>
       </div>
     </template>
-
     <script type="module" src="./index.js"></script>
   </body>
 </html>

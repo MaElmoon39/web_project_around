@@ -10,6 +10,8 @@ import {
   formImgName,
   formImgLink,
   editProfileBtn,
+  deleteBtn,
+  deleteValidation,
 } from "./components/constants.js";
 import { initialCards, formConfig } from "./components/constants.js";
 import Card from "./components/Card.js";
@@ -17,6 +19,7 @@ import UserInfo from "./components/UserInfo.js";
 import Api from "./components/Api.js";
 import PopupWithForms from "./components/PopupWithForms.js";
 import PopupWithImage from "./components/PopupWithImage.js";
+import PopupWithConfirmation from "./components/PopupWithConfirmation.js";
 import Section from "./components/Section.js";
 
 const user = new UserInfo(
@@ -30,10 +33,12 @@ const api = new Api("https://around.nomoreparties.co/v1/web-es-cohort-16", {
   "Content-Type": "application/json",
 });
 
+//Cargar información del usuario desde el servidor
 api.getUser().then((data) => {
   user.setUserInfo(data.name, data.about, data.avatar);
 });
 
+//Cargar tarjetas desde el servidor
 api.getInitialCards().then((data) => {
   const cardSection = new Section(
     {
@@ -67,14 +72,13 @@ const popupProfile = new PopupWithForms(".popup_profile", () => {
 //Añadir nueva card desde el popup
 const popupCards = new PopupWithForms(".popup_add-image", () => {
   api.createCard(formImgName.value, formImgLink.value).then((data) => {
-    console.log(data);
     const cardNode = new Card(data.name, data.link, data.name, () => {
       popupImage.open(data.name, data.link);
     });
     const cardElement = cardNode.generateCard();
 
     if (formImgName.value !== "" && formImgLink.value !== "") {
-      cardsContainer.prepend(cardElement);
+      cardSection.prepend(cardElement);
       popupImage.close();
     }
   });
@@ -92,6 +96,13 @@ editProfileBtn.addEventListener("click", () => {
 
 addImgBtn.addEventListener("click", () => {
   popupCards.open();
+});
+
+const popupDelete = new PopupWithConfirmation(".popup_delete-validation");
+
+popupDelete.setEventListeners();
+deleteBtn.addEventListener("click", () => {
+  deleteValidation.open();
 });
 
 const initialValidation = new FormValidator(formConfig);

@@ -59,6 +59,11 @@ export const formImgName = document.querySelector(
 export const formImgLink = document.querySelector(
   ".form__edit-field_image_link"
 );
+export const deleteBtn = document.querySelector(".elements__picture-trash-btn");
+
+export const deleteValidation = document.querySelector(
+  ".popup_delete-validation"
+);
 
 export const formConfig = {
   formSelector: ".form",
