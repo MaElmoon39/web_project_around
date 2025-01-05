@@ -11,7 +11,6 @@ import {
   formImgLink,
   editProfileBtn,
   deleteBtn,
-  deleteValidation,
 } from "./components/constants.js";
 import { initialCards, formConfig } from "./components/constants.js";
 import Card from "./components/Card.js";
@@ -86,9 +85,9 @@ const popupCards = new PopupWithForms(".popup_add-image", () => {
 
 export const popupImage = new PopupWithImage(".popup_open-image");
 
-popupProfile.setEventListeners();
-popupCards.setEventListeners();
-popupImage.setEventListeners();
+const popupConfirmation = new PopupWithConfirmation(
+  ".popup__content_confirmation"
+);
 
 editProfileBtn.addEventListener("click", () => {
   popupProfile.open();
@@ -98,12 +97,15 @@ addImgBtn.addEventListener("click", () => {
   popupCards.open();
 });
 
-const popupDelete = new PopupWithConfirmation(".popup_delete-validation");
-
-popupDelete.setEventListeners();
-deleteBtn.addEventListener("click", () => {
-  deleteValidation.open();
+popupConfirmation.open(() => {
+  console.log("Working...");
 });
+// deleteBtn.addEventListener("click", () => {});
+
+popupProfile.setEventListeners();
+popupCards.setEventListeners();
+popupImage.setEventListeners();
+popupConfirmation.setEventListeners();
 
 const initialValidation = new FormValidator(formConfig);
 

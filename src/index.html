@@ -124,15 +124,18 @@
           </div>
         </div>
 
-        <!-- <div class="popup popup_delete-validation">
-          <h3 class="popup__title">¿Estás seguro/a?</h3>
-          <img
-            src="<%= require('./images/CloseIcon.svg')%>"
-            alt="Close popup icon"
-            class="popup__close-button"
-          />
-          <button class="form__edit-subm-btn" type="submit">Sí</button>
-        </div> -->
+        <div class="popup popup__content_confirmation">
+          <form class="popup__form popup__form_confirmation">
+            <h3 class="popup__title">¿Estás seguro/a?</h3>
+            <img
+              src="<%= require('./images/CloseIcon.svg')%>"
+              alt="Close popup icon"
+              class="popup__close-button"
+            />
+
+            <button class="form__edit-subm-btn" type="button">Sí</button>
+          </form>
+        </div>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2024. María Tortello</p>
@@ -145,7 +148,7 @@
         <div class="elements__picture-name-section">
           <h3 class="elements__picture-name"></h3>
           <button class="elements__like-btn"></button>
-          <!-- <p class="elements__likes-number">6</p> -->
+          <p class="elements__likes-counter">0</p>
         </div>
       </div>
     </template>

@@ -4,6 +4,10 @@ export default class Card {
     this._cardAlt = data.alt;
     this._cardLink = data.link;
     this.handleCardClick = handleCardClick;
+    this._id = data._id;
+    this._likes = data.likes;
+    this._owner = data.owner;
+    this._createdAt = data.createdAt;
   }
 
   //Este método encuentra el template y procesa su contenido
@@ -13,6 +17,8 @@ export default class Card {
       .content.querySelector(".elements__picture")
       .cloneNode(true);
 
+    cardTemplate.querySelector(".elements__likes-counter").textContent =
+      this._likes.length;
     return cardTemplate;
   }
 
