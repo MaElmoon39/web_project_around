@@ -69,7 +69,7 @@
   line-height: 17px;
 }
 
-/*Esta declaración permite que al momento de dar click en el box del input
+/*Esta declaración permite que al memento de dar click en el box del input
 no aparezca el borde en toda la caja y se mantenga el texto en negro*/
 .form__edit-field:focus {
   outline-style: none;

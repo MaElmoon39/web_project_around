@@ -10,7 +10,6 @@ import {
   formImgName,
   formImgLink,
   editProfileBtn,
-  deleteBtn,
 } from "./components/constants.js";
 import { initialCards, formConfig } from "./components/constants.js";
 import Card from "./components/Card.js";
@@ -100,7 +99,6 @@ addImgBtn.addEventListener("click", () => {
 popupConfirmation.open(() => {
   console.log("Working...");
 });
-// deleteBtn.addEventListener("click", () => {});
 
 popupProfile.setEventListeners();
 popupCards.setEventListeners();

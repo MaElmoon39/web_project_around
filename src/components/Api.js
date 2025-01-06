@@ -75,4 +75,52 @@ export default class Api {
         console.log(err);
       });
   }
+
+  deleteCards(idCard) {
+    return fetch(`${this.baseUrl}/cards/${idCard}`, {
+      method: "DELETE",
+      headers: this.headers,
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(`Error: ${res.status}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  likeCards(idCard) {
+    return fetch(`${this.baseUrl}/cards/likes/${idCard}`, {
+      method: "PUT",
+      headers: this.headers,
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(`Error: ${res.status}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  deleteLikeCards(idCard) {
+    return fetch(`${this.baseUrl}/cards/likes/${idCard}`, {
+      method: "DELETE",
+      headers: this.headers,
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(`Error: ${res.status}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 }
