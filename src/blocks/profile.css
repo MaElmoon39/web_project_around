@@ -7,11 +7,44 @@
   justify-content: space-between;
 }
 
+.profile__avatar {
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  position: relative;
+}
+
 .profile__photo {
   width: 120px;
   min-width: 120px;
   height: 120px;
   border-radius: 50%;
+  z-index: 0;
+}
+
+.profile__edit-avatar {
+  position: absolute;
+  background-image: url(../images/EditButton.svg);
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.profile__avatar:hover .profile__edit-avatar {
+  display: block;
+}
+
+.profile__avatar:hover .profile__photo {
+  opacity: 0.5;
 }
 
 .profile__info {

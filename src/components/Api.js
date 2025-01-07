@@ -93,7 +93,7 @@ export default class Api {
   }
 
   likeCards(idCard) {
-    return fetch(`${this.baseUrl}/cards/likes/${idCard}`, {
+    return fetch(`${this.baseUrl}/cards/${idCard}/likes`, {
       method: "PUT",
       headers: this.headers,
     })
@@ -109,7 +109,7 @@ export default class Api {
   }
 
   deleteLikeCards(idCard) {
-    return fetch(`${this.baseUrl}/cards/likes/${idCard}`, {
+    return fetch(`${this.baseUrl}/cards/${idCard}/likes`, {
       method: "DELETE",
       headers: this.headers,
     })

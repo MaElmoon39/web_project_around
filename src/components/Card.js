@@ -1,14 +1,24 @@
 export default class Card {
-  constructor(data, handleCardClick) {
+  constructor(
+    data,
+    currentUser,
+    handleCardClick,
+    handleAddLike,
+    handleRemoveLike,
+    handleRemove
+  ) {
     this._cardName = data.name;
     this._cardAlt = data.alt;
     this._cardLink = data.link;
     this.handleCardClick = handleCardClick;
+    this._handleRemove = handleRemove;
+    this._handleAddLike = handleAddLike;
+    this._handleRemoveLike = handleRemoveLike;
     this._id = data._id;
-    this._likes = data.likes;
+    this._isLike = data._isLike;
     this._owner = data.owner;
     this._createdAt = data.createdAt;
-    this._user = data.user;
+    this._user = currentUser;
   }
 
   //Este método encuentra el template y procesa su contenido
@@ -29,10 +39,6 @@ export default class Card {
         "none";
     }
 
-    if (this._likes) {
-      cardTemplate.querySelector(".elements__likes-counter").textContent =
-        this._likes.length;
-    }
     return cardTemplate;
   }
 
@@ -57,14 +63,17 @@ export default class Card {
   }
 
   userIsOwner() {
-    return this._owner._id;
-    // return this._owner._id === this._user._id;
+    //return this._owner._id;
+    return this._owner === this._user._id;
   }
 
   hasOwnerLike() {
+    return this._isLike;
+    /*
     return this._likes.some((item) => {
       return item._id === this._owner._id;
     });
+    */
   }
 
   //Esta función agrega todos los controladores de eventos (like/trash/openBigImg buttons)
@@ -78,16 +87,22 @@ export default class Card {
       ".elements__picture-size"
     );
 
-    this._likeButton.addEventListener("click", function (evt) {
-      evt.target.classList.toggle("elements__like-click");
-
-      console.log(this._owner, this._likes);
-      // this._cardTemplate.querySelector(".elements__likes-counter").textContent =
-      //   this._likes.length;
+    this._likeButton.addEventListener("click", (evt) => {
+      if (this.hasOwnerLike()) {
+        this._handleRemoveLike(this._id).then(() => {
+          evt.target.classList.toggle("elements__like-click");
+        });
+      } else {
+        this._handleAddLike(this._id).then(() => {
+          evt.target.classList.toggle("elements__like-click");
+        });
+      }
     });
 
     this._trashButton.addEventListener("click", () => {
-      this._cardElement.remove();
+      this._handleRemove(this._id, () => {
+        this._cardElement.remove();
+      });
     });
 
     //Esta sección permite visualizar la imagen más grande, una vez se da click en una card

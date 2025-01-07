@@ -26,35 +26,54 @@ const user = new UserInfo(
   ".profile__photo"
 );
 
-const api = new Api("https://around.nomoreparties.co/v1/web-es-cohort-16", {
-  authorization: "e7242c01-2ba7-44a6-aed0-e3cd48d1a447",
+const api = new Api("https://around-api.es.tripleten-services.com/v1/", {
+  //  authorization: "e7242c01-2ba7-44a6-aed0-e3cd48d1a447",
+  authorization: "ae15fd05-8fa6-4461-b94f-0036f7ee69f5",
   "Content-Type": "application/json",
 });
 
+let cardSection = null;
+let currentUser = {};
+
 //Cargar información del usuario desde el servidor
 api.getUser().then((data) => {
+  currentUser = data;
   user.setUserInfo(data.name, data.about, data.avatar);
-});
+  //Cargar tarjetas desde el servidor
+  api.getInitialCards().then((data) => {
+    cardSection = new Section(
+      {
+        items: data,
+        renderer: (item) => {
+          const cardNode = new Card(
+            item,
+            currentUser,
+            () => {
+              popupImage.open(item.name, item.link);
+            },
+            (cardId) => {
+              return api.likeCards(cardId);
+            },
+            (cardId) => {
+              return api.deleteLikeCards(cardId);
+            },
+            (cardId) => {
+              popupConfirmation.open(() => {
+                api.deleteCards(cardId);
+              });
+            }
+          );
 
-//Cargar tarjetas desde el servidor
-api.getInitialCards().then((data) => {
-  const cardSection = new Section(
-    {
-      items: data,
-      renderer: (item) => {
-        const cardNode = new Card(item, () => {
-          popupImage.open(item.name, item.link);
-        });
-
-        const cardElement = cardNode.generateCard();
-        //cardsContainer.append(cardElement);
-        cardSection.addItem(cardElement);
+          const cardElement = cardNode.generateCard();
+          //cardsContainer.append(cardElement);
+          cardSection.addItem(cardElement);
+        },
       },
-    },
-    cardsContainer
-  );
+      cardsContainer
+    );
 
-  cardSection.renderItems();
+    cardSection.renderItems();
+  });
 });
 
 //Actualizar el popup "editar perfil"
@@ -70,13 +89,31 @@ const popupProfile = new PopupWithForms(".popup_profile", () => {
 //Añadir nueva card desde el popup
 const popupCards = new PopupWithForms(".popup_add-image", () => {
   api.createCard(formImgName.value, formImgLink.value).then((data) => {
-    const cardNode = new Card(data.name, data.link, data.name, () => {
-      popupImage.open(data.name, data.link);
-    });
+    const cardNode = new Card(
+      data,
+      currentUser,
+      () => {
+        popupImage.open(data.name, data.link);
+      },
+      (cardId) => {
+        return api.likeCards(cardId);
+      },
+      (cardId) => {
+        return api.deleteLikeCards(cardId);
+      },
+      (cardId, callback) => {
+        popupConfirmation.open(() => {
+          api.deleteCards(cardId).then(() => {
+            callback();
+            popupConfirmation.close();
+          });
+        });
+      }
+    );
     const cardElement = cardNode.generateCard();
+    cardSection.prependItem(cardElement);
 
     if (formImgName.value !== "" && formImgLink.value !== "") {
-      cardSection.prepend(cardElement);
       popupImage.close();
     }
   });
@@ -96,9 +133,11 @@ addImgBtn.addEventListener("click", () => {
   popupCards.open();
 });
 
+/*
 popupConfirmation.open(() => {
   console.log("Working...");
 });
+*/
 
 popupProfile.setEventListeners();
 popupCards.setEventListeners();

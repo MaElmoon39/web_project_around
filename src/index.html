@@ -22,7 +22,11 @@
 
       <main class="content">
         <section class="profile">
-          <img alt="Profile photo" class="profile__photo" />
+          <div class="profile__avatar">
+            <img alt="Profile photo" class="profile__photo" />
+            <button class="profile__edit-avatar"></button>
+          </div>
+
           <div class="profile__info">
             <div class="profile__info-text">
               <h2 class="profile__info-name"></h2>
@@ -170,7 +174,6 @@
         <div class="elements__picture-name-section">
           <h3 class="elements__picture-name"></h3>
           <button class="elements__like-btn"></button>
-          <p class="elements__likes-counter">0</p>
         </div>
       </div>
     </template>
