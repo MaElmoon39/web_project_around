@@ -136,6 +136,28 @@
             <button class="form__edit-subm-btn" type="button">Sí</button>
           </form>
         </div>
+
+        <div class="popup popup_add-image popup__updt-avatar-img">
+          <form class="popup__form form" novalidate>
+            <h3 class="popup__title">Cambiar foto de perfil</h3>
+            <img
+              src="<%= require('./images/CloseIcon.svg')%>"
+              alt="Close popup icon"
+              class="popup__close-button"
+            />
+            <input
+              class="form__edit-field form__edit-field_image_link"
+              type="url"
+              id="link-img-input"
+              name="link-img-input"
+              placeholder="Enlace a la imagen"
+              required
+            />
+            <span class="form__input-error link-img-input-error"></span>
+
+            <button class="form__edit-subm-btn" type="submit">Guarda</button>
+          </form>
+        </div>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2024. María Tortello</p>
