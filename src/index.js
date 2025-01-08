@@ -19,9 +19,6 @@ import PopupWithImage from "./components/PopupWithImage.js";
 import PopupWithConfirmation from "./components/PopupWithConfirmation.js";
 import Section from "./components/Section.js";
 
-let cardSection = null;
-let currentUser = {};
-
 const user = new UserInfo(
   ".profile__info-name",
   ".profile__info-about",
@@ -32,6 +29,9 @@ const api = new Api("https://around-api.es.tripleten-services.com/v1/", {
   authorization: "1b616ac7-5a64-43db-bbcc-24fb8a005c55",
   "Content-Type": "application/json",
 });
+
+let cardSection = null;
+let currentUser = {};
 
 //Cargar información del usuario desde el servidor
 api.getUser().then((data) => {

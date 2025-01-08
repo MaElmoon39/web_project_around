@@ -17,15 +17,20 @@
 .popup__form {
   width: 430px;
   padding: 20px;
-  height: 330px;
+  /* height: 330px; */
   background-color: #fff;
   border-radius: 10px;
   position: relative;
   z-index: 10;
 }
 
-.popup__form_confirmation {
-  height: 181px;
+.popup__updt-avatar-img .form__edit-field:last-of-type {
+  margin-top: 16px;
+}
+
+.popup__content_confirmation .form__edit-subm-btn {
+  margin-top: 0;
+  margin-bottom: 36px;
 }
 
 .popup__title {
@@ -35,7 +40,7 @@
   font-size: 24px;
   line-height: 29px;
   font-weight: 900;
-  padding-bottom: 54px;
+  padding-bottom: 38px;
 }
 
 .popup__close-button {
@@ -67,6 +72,7 @@
   border-bottom: 1px solid rgb(0 0 0 / 0.2);
   font-size: 14px;
   line-height: 17px;
+  margin-top: 16px;
 }
 
 /*Esta declaración permite que al memento de dar click en el box del input
@@ -80,11 +86,11 @@ no aparezca el borde en toda la caja y se mantenga el texto en negro*/
 }
 
 .form__edit-field:last-of-type {
-  margin: 28px 0 48px;
+  margin-top: 28px;
 }
 
 .form__edit-subm-btn {
-  /* margin: 48px 0 37px; */
+  margin: 48px 0 37px;
   width: 100%;
   height: 50px;
   background-color: #000;
@@ -108,7 +114,6 @@ no aparezca el borde en toda la caja y se mantenga el texto en negro*/
 .form__input-error_active {
   opacity: 1;
   display: block;
-  margin-top: 5px;
 }
 
 .form__edit-subm-btn_disabled {
