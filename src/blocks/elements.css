@@ -48,9 +48,8 @@
   max-width: 282px;
   height: 79px;
   border-radius: 0 0 10px 10px;
-  display: grid;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 50%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .elements__picture-name {
@@ -61,9 +60,6 @@
   text-overflow: ellipsis; /*Estas últimas líneas se usan para evitar desbordamiento de texto*/
   white-space: nowrap; /*aplicar una elipsis "..."*/
   overflow: hidden;
-  grid-column-start: 1;
-  grid-row-start: 1;
-  grid-row-end: 3;
 }
 
 .elements__like-btn {
@@ -71,8 +67,7 @@
   height: 19px;
   border: none;
   background-color: #fff;
-  justify-self: center;
-  align-self: end;
+  align-self: center;
   background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart.svg)
     center no-repeat;
   background-size: 100%;
@@ -88,12 +83,4 @@
 .elements__like-click {
   background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart-filled.svg)
     center no-repeat;
-}
-
-.elements__likes-counter {
-  color: #000;
-  font-size: 13px;
-  justify-self: center;
-  align-self: start;
-  margin: 3px;
 }

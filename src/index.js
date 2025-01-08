@@ -3,15 +3,14 @@ import FormValidator from "./components/FormValidator.js";
 import {
   addImgBtn,
   cardsContainer,
-  defaultName,
-  defaultAbout,
   inputName,
   inputAbout,
   formImgName,
   formImgLink,
   editProfileBtn,
+  updateAvatarBtn,
 } from "./components/constants.js";
-import { initialCards, formConfig } from "./components/constants.js";
+import { formConfig } from "./components/constants.js";
 import Card from "./components/Card.js";
 import UserInfo from "./components/UserInfo.js";
 import Api from "./components/Api.js";
@@ -20,6 +19,9 @@ import PopupWithImage from "./components/PopupWithImage.js";
 import PopupWithConfirmation from "./components/PopupWithConfirmation.js";
 import Section from "./components/Section.js";
 
+let cardSection = null;
+let currentUser = {};
+
 const user = new UserInfo(
   ".profile__info-name",
   ".profile__info-about",
@@ -27,18 +29,15 @@ const user = new UserInfo(
 );
 
 const api = new Api("https://around-api.es.tripleten-services.com/v1/", {
-  //  authorization: "e7242c01-2ba7-44a6-aed0-e3cd48d1a447",
-  authorization: "ae15fd05-8fa6-4461-b94f-0036f7ee69f5",
+  authorization: "1b616ac7-5a64-43db-bbcc-24fb8a005c55",
   "Content-Type": "application/json",
 });
-
-let cardSection = null;
-let currentUser = {};
 
 //Cargar información del usuario desde el servidor
 api.getUser().then((data) => {
   currentUser = data;
   user.setUserInfo(data.name, data.about, data.avatar);
+
   //Cargar tarjetas desde el servidor
   api.getInitialCards().then((data) => {
     cardSection = new Section(
@@ -65,7 +64,6 @@ api.getUser().then((data) => {
           );
 
           const cardElement = cardNode.generateCard();
-          //cardsContainer.append(cardElement);
           cardSection.addItem(cardElement);
         },
       },
@@ -119,6 +117,16 @@ const popupCards = new PopupWithForms(".popup_add-image", () => {
   });
 });
 
+//Actualizar foto de perfil
+const updateAvatar = new PopupWithForms(".popup__updt-avatar-img", () => {
+  api.updateAvatar(formImgLink.value).then((data) => {
+    currentUser.avatar = data.name;
+    //user.setUserInfo(data.name, data.about, data.avatar);
+    console.log(data);
+  });
+  popupProfile.close();
+});
+
 export const popupImage = new PopupWithImage(".popup_open-image");
 
 const popupConfirmation = new PopupWithConfirmation(
@@ -133,16 +141,15 @@ addImgBtn.addEventListener("click", () => {
   popupCards.open();
 });
 
-/*
-popupConfirmation.open(() => {
-  console.log("Working...");
+updateAvatarBtn.addEventListener("click", () => {
+  updateAvatar.open();
 });
-*/
 
 popupProfile.setEventListeners();
 popupCards.setEventListeners();
 popupImage.setEventListeners();
 popupConfirmation.setEventListeners();
+updateAvatar.setEventListeners();
 
 const initialValidation = new FormValidator(formConfig);
 

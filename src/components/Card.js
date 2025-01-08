@@ -10,15 +10,15 @@ export default class Card {
     this._cardName = data.name;
     this._cardAlt = data.alt;
     this._cardLink = data.link;
-    this.handleCardClick = handleCardClick;
-    this._handleRemove = handleRemove;
-    this._handleAddLike = handleAddLike;
-    this._handleRemoveLike = handleRemoveLike;
     this._id = data._id;
     this._isLike = data._isLike;
     this._owner = data.owner;
     this._createdAt = data.createdAt;
     this._user = currentUser;
+    this.handleCardClick = handleCardClick;
+    this._handleAddLike = handleAddLike;
+    this._handleRemoveLike = handleRemoveLike;
+    this._handleRemove = handleRemove;
   }
 
   //Este método encuentra el template y procesa su contenido
@@ -63,17 +63,11 @@ export default class Card {
   }
 
   userIsOwner() {
-    //return this._owner._id;
     return this._owner === this._user._id;
   }
 
   hasOwnerLike() {
     return this._isLike;
-    /*
-    return this._likes.some((item) => {
-      return item._id === this._owner._id;
-    });
-    */
   }
 
   //Esta función agrega todos los controladores de eventos (like/trash/openBigImg buttons)

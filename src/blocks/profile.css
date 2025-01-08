@@ -24,7 +24,7 @@
 
 .profile__edit-avatar {
   position: absolute;
-  background-image: url(../images/EditButton.svg);
+  background-image: url(../images/EditAvatarButton.svg);
   background-size: contain;
   background-color: transparent;
   border: none;
@@ -33,8 +33,8 @@
   z-index: 1;
   top: 50%;
   left: 50%;
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   padding: 0;
   transform: translate(-50%, -50%);
   cursor: pointer;

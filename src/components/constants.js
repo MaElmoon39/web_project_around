@@ -59,6 +59,7 @@ export const formImgName = document.querySelector(
 export const formImgLink = document.querySelector(
   ".form__edit-field_image_link"
 );
+export const updateAvatarBtn = document.querySelector(".profile__edit-avatar");
 
 export const formConfig = {
   formSelector: ".form",
