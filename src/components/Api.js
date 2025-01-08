@@ -13,7 +13,9 @@ export default class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.status}`);
+        return Promise.reject(
+          `Algo ha fallado: ${res.status} ${res.statusText}`
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -29,7 +31,9 @@ export default class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.status}`);
+        return Promise.reject(
+          `Algo ha fallado: ${res.status} ${res.statusText}`
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -49,7 +53,9 @@ export default class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.status}`);
+        return Promise.reject(
+          `Algo ha fallado: ${res.status} ${res.statusText}`
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -69,7 +75,9 @@ export default class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.status}`);
+        return Promise.reject(
+          `Algo ha fallado: ${res.status} ${res.statusText}`
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -85,7 +93,9 @@ export default class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.status}`);
+        return Promise.reject(
+          `Algo ha fallado: ${res.status} ${res.statusText}`
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -101,7 +111,9 @@ export default class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.status}`);
+        return Promise.reject(
+          `Algo ha fallado: ${res.status} ${res.statusText}`
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -117,7 +129,9 @@ export default class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.status}`);
+        return Promise.reject(
+          `Algo ha fallado: ${res.status} ${res.statusText}`
+        );
       })
       .catch((err) => {
         console.log(err);
@@ -136,7 +150,9 @@ export default class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.status}`);
+        return Promise.reject(
+          `Algo ha fallado: ${res.status} ${res.statusText}`
+        );
       })
       .catch((err) => {
         console.log(err);

@@ -104,6 +104,18 @@ no aparezca el borde en toda la caja y se mantenga el texto en negro*/
   opacity: 80%;
 }
 
+/*.form__content-btn {
+  display: none;
+}
+
+.form__edit-subm-btn span {
+  display: block;
+}
+
+ .form__edit-subm-btn:after {
+  content: "Guardando...";
+} */
+
 .form__input-error {
   font-size: 12px;
   color: red;

@@ -77,9 +77,13 @@ api.getUser().then((data) => {
 //Actualizar el popup "editar perfil"
 const popupProfile = new PopupWithForms(".popup_profile", () => {
   if (inputName.value.length > 2 && inputAbout.value.length > 2) {
+    //renderLoading(true);
     api.editUser(inputName.value, inputAbout.value).then((data) => {
       user.setUserInfo(data.name, data.about, data.avatar);
     });
+    // .finally(() => {
+    //   renderLoading(false);
+    // });
     popupProfile.close();
   }
 });
@@ -119,11 +123,15 @@ const popupCards = new PopupWithForms(".popup_add-image", () => {
 
 //Actualizar foto de perfil
 const updateAvatar = new PopupWithForms(".popup__updt-avatar-img", () => {
+  //renderLoading(true);
   api.updateAvatar(formImgLink.value).then((data) => {
     currentUser.avatar = data.name;
     //user.setUserInfo(data.name, data.about, data.avatar);
     console.log(data);
   });
+  // .finally(() => {
+  //   renderLoading(false);
+  // });
   popupProfile.close();
 });
 

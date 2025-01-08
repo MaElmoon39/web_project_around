@@ -26,6 +26,16 @@ export default class PopupWithForms extends Popup {
     }
   }
 
+  renderLoading(isLoading) {
+    if (isLoading) {
+      this._formElement.querySelector(".form__edit-subm-btn").textContent =
+        "Guardando...";
+      console.log(
+        this._formElement.querySelector(".form__edit-subm-btn").textContent
+      );
+    }
+  }
+
   setEventListeners() {
     super.setEventListeners();
     this._formElement.addEventListener("submit", (evt) => {
