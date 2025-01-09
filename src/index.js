@@ -126,7 +126,7 @@ const updateAvatar = new PopupWithForms(
   ({ avatar }) => {
     return api.updateAvatar(avatar).then((data) => {
       document.querySelector(".profile__photo").src = data.avatar;
-      popupProfile.close();
+      updateAvatar.close();
     });
   }
 );
