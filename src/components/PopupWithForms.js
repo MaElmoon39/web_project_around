@@ -30,9 +30,9 @@ export default class PopupWithForms extends Popup {
     if (isLoading) {
       this._formElement.querySelector(".form__edit-subm-btn").textContent =
         "Guardando...";
-      console.log(
-        this._formElement.querySelector(".form__edit-subm-btn").textContent
-      );
+    } else {
+      this._formElement.querySelector(".form__edit-subm-btn").textContent =
+        "Guardar";
     }
   }
 
@@ -40,8 +40,10 @@ export default class PopupWithForms extends Popup {
     super.setEventListeners();
     this._formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
-      this.handleFormSubmit(this._getInputValues);
-      this.close();
+      this.renderLoading(true);
+      this.handleFormSubmit(this._getInputValues()).then(() => {
+        this.renderLoading(false);
+      });
     });
   }
 }

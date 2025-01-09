@@ -25,7 +25,7 @@ const user = new UserInfo(
   ".profile__photo"
 );
 
-const api = new Api("https://around-api.es.tripleten-services.com/v1/", {
+const api = new Api("https://around-api.es.tripleten-services.com/v1", {
   authorization: "1b616ac7-5a64-43db-bbcc-24fb8a005c55",
   "Content-Type": "application/json",
 });
@@ -56,9 +56,12 @@ api.getUser().then((data) => {
             (cardId) => {
               return api.deleteLikeCards(cardId);
             },
-            (cardId) => {
+            (cardId, callback) => {
               popupConfirmation.open(() => {
-                api.deleteCards(cardId);
+                api.deleteCards(cardId).then(() => {
+                  callback();
+                  popupConfirmation.close();
+                });
               });
             }
           );
@@ -77,20 +80,16 @@ api.getUser().then((data) => {
 //Actualizar el popup "editar perfil"
 const popupProfile = new PopupWithForms(".popup_profile", () => {
   if (inputName.value.length > 2 && inputAbout.value.length > 2) {
-    //renderLoading(true);
-    api.editUser(inputName.value, inputAbout.value).then((data) => {
+    return api.editUser(inputName.value, inputAbout.value).then((data) => {
       user.setUserInfo(data.name, data.about, data.avatar);
+      popupProfile.close();
     });
-    // .finally(() => {
-    //   renderLoading(false);
-    // });
-    popupProfile.close();
   }
 });
 
 //Añadir nueva card desde el popup
 const popupCards = new PopupWithForms(".popup_add-image", () => {
-  api.createCard(formImgName.value, formImgLink.value).then((data) => {
+  return api.createCard(formImgName.value, formImgLink.value).then((data) => {
     const cardNode = new Card(
       data,
       currentUser,
@@ -116,24 +115,21 @@ const popupCards = new PopupWithForms(".popup_add-image", () => {
     cardSection.prependItem(cardElement);
 
     if (formImgName.value !== "" && formImgLink.value !== "") {
-      popupImage.close();
+      popupCards.close();
     }
   });
 });
 
 //Actualizar foto de perfil
-const updateAvatar = new PopupWithForms(".popup__updt-avatar-img", () => {
-  //renderLoading(true);
-  api.updateAvatar(formImgLink.value).then((data) => {
-    currentUser.avatar = data.name;
-    //user.setUserInfo(data.name, data.about, data.avatar);
-    console.log(data);
-  });
-  // .finally(() => {
-  //   renderLoading(false);
-  // });
-  popupProfile.close();
-});
+const updateAvatar = new PopupWithForms(
+  ".popup__updt-avatar-img",
+  ({ avatar }) => {
+    return api.updateAvatar(avatar).then((data) => {
+      document.querySelector(".profile__photo").src = data.avatar;
+      popupProfile.close();
+    });
+  }
+);
 
 export const popupImage = new PopupWithImage(".popup_open-image");
 
@@ -143,6 +139,8 @@ const popupConfirmation = new PopupWithConfirmation(
 
 editProfileBtn.addEventListener("click", () => {
   popupProfile.open();
+  inputName.value = user.getUserInfo().name;
+  inputAbout.value = user.getUserInfo().about;
 });
 
 addImgBtn.addEventListener("click", () => {

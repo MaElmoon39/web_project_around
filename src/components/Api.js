@@ -138,12 +138,12 @@ export default class Api {
       });
   }
 
-  updateAvatar(data) {
+  updateAvatar(avatar) {
     return fetch(`${this.baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this.headers,
       body: JSON.stringify({
-        avatar: data.avatar,
+        avatar,
       }),
     })
       .then((res) => {

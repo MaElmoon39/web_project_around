@@ -17,7 +17,6 @@
 .popup__form {
   width: 430px;
   padding: 20px;
-  /* height: 330px; */
   background-color: #fff;
   border-radius: 10px;
   position: relative;
@@ -103,18 +102,6 @@ no aparezca el borde en toda la caja y se mantenga el texto en negro*/
   cursor: pointer;
   opacity: 80%;
 }
-
-/*.form__content-btn {
-  display: none;
-}
-
-.form__edit-subm-btn span {
-  display: block;
-}
-
- .form__edit-subm-btn:after {
-  content: "Guardando...";
-} */
 
 .form__input-error {
   font-size: 12px;

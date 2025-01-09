@@ -11,7 +11,7 @@ export default class Card {
     this._cardAlt = data.alt;
     this._cardLink = data.link;
     this._id = data._id;
-    this._isLike = data._isLike;
+    this._isLiked = data.isLiked;
     this._owner = data.owner;
     this._createdAt = data.createdAt;
     this._user = currentUser;
@@ -28,7 +28,7 @@ export default class Card {
       .content.querySelector(".elements__picture")
       .cloneNode(true);
 
-    if (!!this._likes && this.hasOwnerLike()) {
+    if (this.hasOwnerLike()) {
       cardTemplate
         .querySelector(".elements__like-btn")
         .classList.add("elements__like-click");
@@ -67,7 +67,7 @@ export default class Card {
   }
 
   hasOwnerLike() {
-    return this._isLike;
+    return this._isLiked;
   }
 
   //Esta función agrega todos los controladores de eventos (like/trash/openBigImg buttons)
