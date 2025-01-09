@@ -13,9 +13,12 @@ La base del proyecto se enfoca en conectar la página web al servidor y reorgani
 ## Imágenes, GIF, screenshots de soporte
 
 Validación e interactividad mantenida a partir de los cambios efectuados durante el desarrollo del proyecto del Sprint 12:
+
 ![image](https://github.com/user-attachments/assets/de1d170c-ea60-4e44-8aaf-29b28b37c4e5)
 
 Demo aplicación en servidor Around The US de María Tortello:
+
+https://github.com/user-attachments/assets/555dbe3c-00a9-4375-9f72-9a60160cd51e
 
 ## Enlace a GitHub Pages:
 
